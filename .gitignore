@@ -1,0 +1,10 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/LianOk.Docking/v15
+/LianOk.Docking.Core/bin/Debug
+/LianOk.Docking.Core/obj/Debug
+/packages
+/UnitTestProject1/obj/Debug
+/UnitTestProject1/bin/Debug

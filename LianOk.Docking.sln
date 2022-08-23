@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LianOk.Docking.Core", "LianOk.Docking.Core\LianOk.Docking.Core.csproj", "{5505BAEB-F55F-46A9-8C08-E66A126CA5BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{E6253E66-1CFC-40C1-8321-D05EC38EE0E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5505BAEB-F55F-46A9-8C08-E66A126CA5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5505BAEB-F55F-46A9-8C08-E66A126CA5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5505BAEB-F55F-46A9-8C08-E66A126CA5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5505BAEB-F55F-46A9-8C08-E66A126CA5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6253E66-1CFC-40C1-8321-D05EC38EE0E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6253E66-1CFC-40C1-8321-D05EC38EE0E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6253E66-1CFC-40C1-8321-D05EC38EE0E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6253E66-1CFC-40C1-8321-D05EC38EE0E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7830E0C4-B335-4AC1-B785-84809CB08776}
+	EndGlobalSection
+EndGlobal
