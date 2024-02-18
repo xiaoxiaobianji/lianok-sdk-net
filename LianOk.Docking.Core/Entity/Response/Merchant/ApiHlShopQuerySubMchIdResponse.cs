@@ -20,12 +20,12 @@ namespace LianOk.Docking.Entity.Response.Merchant
         /// <summary>
         /// 支付宝子商户号
         /// </summary>
-        [JsonProperty(PropertyName = "smid")]
-        public string Smid;
+        [JsonProperty(PropertyName = "alipayMerchantNo")]
+        public string AlipayMerchantNo;
         /// <summary>
         /// 微信子商户号
         /// </summary>
-        [JsonProperty(PropertyName = "wxPid")]
-        public string WxPid;
+        [JsonProperty(PropertyName = "wechatMerchantNo")]
+        public string WechatMerchantNo;
     }
 }

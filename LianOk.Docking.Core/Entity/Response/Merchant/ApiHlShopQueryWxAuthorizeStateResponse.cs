@@ -15,13 +15,13 @@ namespace LianOk.Docking.Entity.Response.Merchant
         /// <summary>
         /// 上游商户号
         /// </summary>
-        [JsonProperty(PropertyName = "merchantId")]
-        public string MerchantId;
+        [JsonProperty(PropertyName = "channelMerchantNo")]
+        public string ChannelMerchantNo;
         /// <summary>
         /// 微信子商户号
         /// </summary>
-        [JsonProperty(PropertyName = "wxPid")]
-        public string WxPid;
+        [JsonProperty(PropertyName = "wechatMerchantNo")]
+        public string WechatMerchantNo;
         /// <summary>
         /// 授权状态
         /// AUTHORIZED：已授权

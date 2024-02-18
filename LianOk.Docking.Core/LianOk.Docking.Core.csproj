@@ -64,6 +64,8 @@
     <Compile Include="Entity\Model\HlCommunicationLog.cs" />
     <Compile Include="Entity\Model\HlComplaint.cs" />
     <Compile Include="Entity\Model\HlOrderPromotions.cs" />
+    <Compile Include="Entity\Model\HlShopSettlePeriod.cs" />
+    <Compile Include="Entity\Model\HlShopSettlePeriodApply.cs" />
     <Compile Include="Entity\Request\Complaint\ApiHlComplaintCompleteRequest.cs" />
     <Compile Include="Entity\Request\Complaint\ApiHlComplaintDetailQueryRequest.cs" />
     <Compile Include="Entity\Request\Complaint\ApiHlComplaintListQueryRequest.cs" />
@@ -74,6 +76,13 @@
     <Compile Include="Entity\Request\Complaint\ApiHlComplaintReplyRequest.cs" />
     <Compile Include="Entity\Request\Complaint\ApiHlComplaintUploadImageRequest.cs" />
     <Compile Include="Entity\Request\Merchant\ApiHlShopDetailRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopEntryRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopEntryStatusRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopQuerySubMchIdRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopQueryWxAuthorizeStateRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopQueryZfbAuthorizeStateRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopSettlePeriodQueryRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopSettlePeriodSetRequest.cs" />
     <Compile Include="Entity\Request\Merchant\ApiHlShopUploadImageRequest.cs" />
     <Compile Include="Entity\Request\Pay\ApiHlOrderPayBankRequest.cs" />
     <Compile Include="Entity\Request\Pay\ApiHlOrderPayH5Request.cs" />
@@ -90,6 +99,13 @@
     <Compile Include="Entity\Response\Complaint\ApiHlComplaintReplyResponse.cs" />
     <Compile Include="Entity\Response\Complaint\ApiHlComplaintUploadImageResponse.cs" />
     <Compile Include="Entity\Response\Merchant\ApiHlShopDetailResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopEntryResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopEntryStatusResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopQuerySubMchIdResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopQueryWxAuthorizeStateResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopQueryZfbAuthorizeStateResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopSettlePeriodQueryResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopSettlePeriodSetResponse.cs" />
     <Compile Include="Entity\Response\Merchant\ApiHlShopUploadImageResponse.cs" />
     <Compile Include="Entity\Response\Pay\ApiHlOrderPayBankResponse.cs" />
     <Compile Include="Entity\Response\Pay\ApiHlOrderPayH5Response.cs" />
