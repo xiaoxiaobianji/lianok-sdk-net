@@ -38,7 +38,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void FtpHLOrderTest()
         {
-            FtpClient client = new FtpClient("ftp.lianok.com", "62110", "douplus1", "XingHuo123!@#");
+            FtpClient client = new FtpClient("ftp.lianok.com", "62110", "xxxx", "xxxx");
             string agentCode = "100090";
             var response = client.GetResponse($"{agentCode}_{DateTime.Now.AddDays(1).ToString("yyyyMMdd")}_order.txt");
         }
