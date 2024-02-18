@@ -7,18 +7,19 @@
     <ProjectGuid>{5505BAEB-F55F-46A9-8C08-E66A126CA5BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LianOk.Docking.Core</RootNamespace>
-    <AssemblyName>LianOk.Docking.Core</AssemblyName>
+    <RootNamespace>LianOk.Docking</RootNamespace>
+    <AssemblyName>LianOk.Docking</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -43,44 +44,108 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultClient.cs" />
-    <Compile Include="DockingConfig.cs" />
-    <Compile Include="DockingRequestBase.cs" />
-    <Compile Include="DockingResponseBase.cs" />
-    <Compile Include="Http\FormatType.cs" />
-    <Compile Include="Http\HttpRequest.cs" />
-    <Compile Include="Http\HttpResponse.cs" />
-    <Compile Include="Http\MethodType.cs" />
-    <Compile Include="Http\PositionType.cs" />
-    <Compile Include="Http\ProtocolType.cs" />
-    <Compile Include="IDockingClient.cs" />
-    <Compile Include="IDockingRequest.cs" />
-    <Compile Include="LianOkRequest.cs" />
+    <Compile Include="Core\Client\DefaultClient.cs" />
+    <Compile Include="Core\Client\FtpClient.cs" />
+    <Compile Include="Core\DockingUploadImageRequest.cs" />
+    <Compile Include="Core\EnvEnum.cs" />
+    <Compile Include="Core\Http\FtpHelper.cs" />
+    <Compile Include="Core\Client\UploadClient.cs" />
+    <Compile Include="Core\DockingRequestBase.cs" />
+    <Compile Include="Core\DockingResponseBase.cs" />
+    <Compile Include="Core\Http\FormatType.cs" />
+    <Compile Include="Core\Http\HttpRequest.cs" />
+    <Compile Include="Core\Http\HttpResponse.cs" />
+    <Compile Include="Core\Http\MethodType.cs" />
+    <Compile Include="Core\Http\PositionType.cs" />
+    <Compile Include="Core\Http\ProtocolType.cs" />
+    <Compile Include="Core\IDockingClient.cs" />
+    <Compile Include="Core\IDockingRequest.cs" />
+    <Compile Include="Core\LianOkRequest.cs" />
+    <Compile Include="Entity\Model\HlCommunicationLog.cs" />
+    <Compile Include="Entity\Model\HlComplaint.cs" />
+    <Compile Include="Entity\Model\HlOrderPromotions.cs" />
+    <Compile Include="Entity\Model\HlShopSettlePeriod.cs" />
+    <Compile Include="Entity\Model\HlShopSettlePeriodApply.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintCompleteRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintDetailQueryRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintListQueryRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintLogListQueryRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintNotifyQueryRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintNotifySetRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintRefundRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintReplyRequest.cs" />
+    <Compile Include="Entity\Request\Complaint\ApiHlComplaintUploadImageRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopDetailRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopEntryRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopEntryStatusRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopQuerySubMchIdRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopQueryWxAuthorizeStateRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopQueryZfbAuthorizeStateRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopSettlePeriodQueryRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopSettlePeriodSetRequest.cs" />
+    <Compile Include="Entity\Request\Merchant\ApiHlShopUploadImageRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayBankRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayH5Request.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayNativeRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPrePayAppletRequest.cs" />
+    <Compile Include="Entity\Response\Bill\FtpHlOrderResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintCompleteResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintDetailQueryResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintListQueryResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintLogListQueryResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintNotifyQueryResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintNotifySetResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintRefundResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintReplyResponse.cs" />
+    <Compile Include="Entity\Response\Complaint\ApiHlComplaintUploadImageResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopDetailResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopEntryResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopEntryStatusResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopQuerySubMchIdResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopQueryWxAuthorizeStateResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopQueryZfbAuthorizeStateResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopSettlePeriodQueryResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopSettlePeriodSetResponse.cs" />
+    <Compile Include="Entity\Response\Merchant\ApiHlShopUploadImageResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayBankResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayH5Response.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayNativeResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPrePayAppletResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Request\ApiHLOrderAccountStatementApplyReuqest.cs" />
-    <Compile Include="Request\ApiHLOrderCloseRequest.cs" />
-    <Compile Include="Request\ApiHLOrderPayAppletRequest.cs" />
-    <Compile Include="Request\ApiHLOrderPayBarcodeRequest.cs" />
-    <Compile Include="Request\ApiHLOrderPayDetailsRequest.cs" />
-    <Compile Include="Request\ApiHLOrderPayUnifiedRequest.cs" />
-    <Compile Include="Request\ApiHLOrderQueryApplyRequest.cs" />
-    <Compile Include="Request\ApiHLOrderRefundDetailsRequest.cs" />
-    <Compile Include="Request\ApiHLOrderRefundOperationRequest.cs" />
-    <Compile Include="ResponseResultBase.cs" />
-    <Compile Include="Response\ApiHLOrderAccountStatementApplyResponse.cs" />
-    <Compile Include="Response\ApiHLOrderCloseResponse.cs" />
-    <Compile Include="Response\ApiHLOrderPayAppletResponse.cs" />
-    <Compile Include="Response\ApiHLOrderPayBarcodeResponse.cs" />
-    <Compile Include="Response\ApiHLOrderPayDetailsResponse.cs" />
-    <Compile Include="Response\ApiHLOrderPayUnifiedResponse.cs" />
-    <Compile Include="Response\ApiHLOrderQueryApplyResponse.cs" />
-    <Compile Include="Response\ApiHLOrderRefundDetailsResponse.cs" />
-    <Compile Include="Response\ApiHLOrderRefundOperationResponse.cs" />
-    <Compile Include="Utils\EncryEnum.cs" />
-    <Compile Include="Utils\ParameterHelper.cs" />
+    <Compile Include="Entity\Request\Bill\ApiHlOrderAccountStatementApplyReuqest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderCloseRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayAppletRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayBarcodeRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayDetailsRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderPayUnifiedRequest.cs" />
+    <Compile Include="Entity\Request\Bill\ApiHlOrderQueryApplyRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderRefundDetailsRequest.cs" />
+    <Compile Include="Entity\Request\Pay\ApiHlOrderRefundOperationRequest.cs" />
+    <Compile Include="Core\ResponseResultBase.cs" />
+    <Compile Include="Entity\Response\Bill\ApiHlOrderAccountStatementApplyResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderCloseResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayAppletResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayBarcodeResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayDetailsResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderPayUnifiedResponse.cs" />
+    <Compile Include="Entity\Response\Bill\ApiHlOrderQueryApplyResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderRefundDetailsResponse.cs" />
+    <Compile Include="Entity\Response\Pay\ApiHlOrderRefundOperationResponse.cs" />
+    <Compile Include="Core\Utils\EncryEnum.cs" />
+    <Compile Include="Core\Utils\ParameterHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entity\Request\Alipay\" />
+    <Folder Include="Entity\Request\Fund\" />
+    <Folder Include="Entity\Request\Ledger\" />
+    <Folder Include="Entity\Request\Notification\" />
+    <Folder Include="Entity\Response\Alipay\" />
+    <Folder Include="Entity\Response\Fund\" />
+    <Folder Include="Entity\Response\Ledger\" />
+    <Folder Include="Entity\Response\Notification\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
