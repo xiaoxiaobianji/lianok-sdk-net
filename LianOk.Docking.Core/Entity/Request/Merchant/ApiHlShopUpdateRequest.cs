@@ -5,25 +5,23 @@ using System;
 namespace LianOk.Docking.Entity.Request.Merchant
 {
     /// <summary>
-    /// 商户进件
+    /// 商户修改
     /// 
-    /// 参考：https://www.yuque.com/youyun-8yqqt/vpbgq7/gtm9nu2m2rxsg9iz
+    /// 参考：https://www.yuque.com/youyun-8yqqt/vpbgq7/zqur2n2f2uxrahmp
     /// </summary>
-    public class ApiHlShopEntryRequest : DockingRequestBase
+    public class ApiHlShopUpdateRequest : DockingRequestBase
     {
         public override string GetApiName()
         {
-            return "api.hl.shop.entry";
+            return "api.hl.shop.updateMerchant";
         }
 
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
         [JsonProperty(PropertyName = "channelCode")]
         public string ChannelCode { get; set; }
         [JsonProperty(PropertyName = "notifyUrl")]
         public string NotifyUrl { get; set; }
-        [JsonProperty(PropertyName = "loginAccount")]
-        public string LoginAccount { get; set; }
-        [JsonProperty(PropertyName = "entryType")]
-        public int EntryType { get; set; }
         [JsonProperty(PropertyName = "merchantType")]
         public string MerchantType { get; set; }
         [JsonProperty(PropertyName = "lawPerson")]
