@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace LianOk.Docking.Entity.Response.Merchant
+namespace LianOk.Docking.Entity.Response.BranchShop
 {
     [Serializable]
     public class ApiHlShopQueryBranchShopListResponse : DockingResponseBase

@@ -1,7 +1,7 @@
 ﻿using LianOk.Docking.Core;
 using Newtonsoft.Json;
 
-namespace LianOk.Docking.Entity.Request.Merchant
+namespace LianOk.Docking.Entity.Request.Employee
 {
     /// <summary>
     /// 员工列表查询接口

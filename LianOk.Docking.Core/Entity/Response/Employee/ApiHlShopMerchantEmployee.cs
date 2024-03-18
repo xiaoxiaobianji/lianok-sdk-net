@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace LianOk.Docking.Entity.Response.Merchant
+namespace LianOk.Docking.Entity.Response.Employee
 {
     [Serializable]
     public class ApiHlShopMerchantEmployee

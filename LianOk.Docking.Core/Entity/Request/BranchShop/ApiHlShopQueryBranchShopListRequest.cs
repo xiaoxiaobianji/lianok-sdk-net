@@ -1,7 +1,7 @@
 ﻿using LianOk.Docking.Core;
 using Newtonsoft.Json;
 
-namespace LianOk.Docking.Entity.Request.Merchant
+namespace LianOk.Docking.Entity.Request.BranchShop
 {
     /// <summary>
     /// 分店列表查询接口
