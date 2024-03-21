@@ -1,6 +1,8 @@
 ﻿using LianOk.Docking.Core;
+using LianOk.Docking.Entity.Model;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace LianOk.Docking.Entity.Response.BranchShop
 {
@@ -26,6 +28,6 @@ namespace LianOk.Docking.Entity.Response.BranchShop
         /// 分店集合
         /// </summary>
         [JsonProperty(PropertyName = "branchShopList")]
-        public List<ApiHlShopBranchShop> BranchShopList;
+        public List<HlShopBranchShop> BranchShopList;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using LianOk.Docking.Core;
+using LianOk.Docking.Entity.Model;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace LianOk.Docking.Entity.Response.Accredit
 {
@@ -11,6 +13,6 @@ namespace LianOk.Docking.Entity.Response.Accredit
         /// 分账规则详情
         /// </summary>
         [JsonProperty(PropertyName = "ruleList")]
-        public List<ApiHLBillRuleInfo> RuleList { get; set; }
+        public List<HlBillRuleInfo> RuleList { get; set; }
     } 
 }

@@ -1,5 +1,6 @@
 ﻿using LianOk.Docking.Core;
 using Newtonsoft.Json;
+using System;
 
 namespace LianOk.Docking.Entity.Request.Accredit
 {
@@ -48,17 +49,11 @@ namespace LianOk.Docking.Entity.Request.Accredit
         public DateTime RuleEffectiveDate { get; set; }
 
         /// <summary>
-        /// 分账规则生效日期，精确到秒
-        /// </summary>
-        [JsonProperty(PropertyName = "ruleEffectiveDate")]
-        public DateTime RuleEffectiveDate { get; set; }
-        
-        /// <summary>
         /// 分账规则结束日期，精确到秒
         /// </summary>
-        [JsonProperty(PropertyName = "ruleExpiredDate")]
-        public int RuleExpiredDate { get; set; }
-
+        [JsonProperty(PropertyName = "ruleEffectiveDate")]
+        public DateTime RuleExpiredDate { get; set; }
+        
         /// <summary>
         /// 分账比例，万分位，如10000=100%
         /// </summary>

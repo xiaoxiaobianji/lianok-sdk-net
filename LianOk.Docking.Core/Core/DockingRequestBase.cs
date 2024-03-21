@@ -17,9 +17,9 @@ namespace LianOk.Docking.Core
         /// 参数
         /// </summary>
         /// <returns></returns>
-        public virtual Dictionary<string, string> GetParams()
+        public virtual Dictionary<string, object> GetParams()
         {
-            Dictionary<string, string> dict = new Dictionary<string, string>();
+            Dictionary<string, object> dict = new Dictionary<string, object>();
             foreach (var propertyInfo in GetType().GetProperties())
             {
                 var isDefinedIgnore = propertyInfo.IsDefined(typeof(JsonIgnoreAttribute), false);
@@ -55,6 +55,15 @@ namespace LianOk.Docking.Core
         public virtual string GetVersionNo()
         {
             return "1";
+        }
+
+        /// <summary>
+        /// 接口版本
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool GetSignByObjectMethod()
+        {
+            return false;
         }
     }
 }

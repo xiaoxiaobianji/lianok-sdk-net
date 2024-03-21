@@ -5,7 +5,7 @@ using System;
 namespace LianOk.Docking.Entity.Response.Accredit
 {
     [Serializable]
-    public class ApiHLBillContractAccreditResponse : DockingResponseBase
+    public class ApiHLShareOrderCreateResponse : DockingResponseBase
     {
         /// <summary>
         /// 分账方商户ID
