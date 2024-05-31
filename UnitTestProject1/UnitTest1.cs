@@ -123,6 +123,23 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        public void ApiHlOrderPayH5Test()
+        {
+            DefaultClient client = getClient();
+            var request = new ApiHlOrderPayH5Request
+            {
+                BusinessOrderNo = DateTime.Now.ToString("yyyyMMddHHmmssfff"),
+                MerchantNo = MERCHANT,
+                OperatorAccount = ACCOUNT,
+                PayAmount = 0.01M,
+                Remark = "remark3",
+                PayWay = "alipay",
+                Subject = "支付宝小商品"
+            };
+            var response = client.GetResponse<ApiHlOrderPayH5Request, ApiHlOrderPayH5Response>(request);
+        }
+
+        [TestMethod]
         public void ApiHLOrderCloseTest()
         {
             DefaultClient client = getClient();
