@@ -11,27 +11,33 @@ namespace LianOk.Docking.Core
     public class DefaultClient : IDockingClient
     {
         private string Url { get; set; }
+        private string EntryUrl { get; set; }
         private string AuthCode { get; set; }
         private string Salt { get; set; }
 
         public DefaultClient(EnvEnum env, string authCode, string secret)
         {
             string url;
+            string entryUrl;
             switch (env)
             {
                 case EnvEnum.TEST:
-                    url = "https://testapi.intranet.aduer.com/open/v1/api/biz/do";
+                    url = "http://testapi.intranet.aduer.com/open/v1/api/biz/do";
+                    entryUrl = "http://testapi.intranet.aduer.com/openapi/v2/api/biz/do";
                     break;
                 case EnvEnum.PRE:
                     url = "https://open.pre.lianok.com/open/v1/api/biz/do";
+                    entryUrl = "https://open.pre.lianok.com/openapi/v2/api/biz/do";
                     break;
                 case EnvEnum.PUBLISH:
                     url = "https://open.lianok.com/open/v1/api/biz/do";
+                    entryUrl = "https://open.lianok.com/openapi/v2/api/biz/do";
                     break;
                 default:
                     throw new ArgumentNullException("环境参数错误");
             }
             Url = url;
+            EntryUrl = entryUrl;
             AuthCode = authCode;
             Salt = secret;
         }
