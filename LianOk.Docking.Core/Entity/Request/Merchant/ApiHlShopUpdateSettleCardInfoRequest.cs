@@ -106,5 +106,14 @@ namespace LianOk.Docking.Entity.Request.Merchant
         [JsonProperty(PropertyName = "nonLawIdCardNo")]
         public string NonLawIdCardNo { get; set; }
 
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
+
     }
 }

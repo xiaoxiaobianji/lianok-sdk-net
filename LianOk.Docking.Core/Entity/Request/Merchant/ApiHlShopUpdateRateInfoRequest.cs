@@ -50,5 +50,14 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "cloudPayGt1000Rate")]
         public decimal CloudPayGt1000Rate { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

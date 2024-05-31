@@ -45,5 +45,14 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "unionCreditRate")]
         public decimal UnionCreditRate { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

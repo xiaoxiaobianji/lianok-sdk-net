@@ -30,5 +30,14 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "swipeType")]
         public int SwipeType { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

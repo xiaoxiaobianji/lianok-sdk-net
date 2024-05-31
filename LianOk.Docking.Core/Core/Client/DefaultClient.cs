@@ -60,7 +60,12 @@ namespace LianOk.Docking.Core
             };
             var content = JsonConvert.SerializeObject(req);
             var contentBytes = Encoding.UTF8.GetBytes(content);
-            HttpRequest httpRequest = new HttpRequest(Url).SetContent(contentBytes, "utf-8", FormatType.JSON);
+            string requestUrl = Url;
+            if (request.GetSignByJsonStringMethod())
+            {
+                requestUrl = EntryUrl;
+            }
+            HttpRequest httpRequest = new HttpRequest(requestUrl).SetContent(contentBytes, "utf-8", FormatType.JSON);
             HttpResponse response = HttpResponse.GetResponse(httpRequest, httpRequest.TimeoutInMilliSeconds);
             return response;
         }
@@ -93,19 +98,19 @@ namespace LianOk.Docking.Core
             //如果走新签名方式，直接用json拼接签名
             if (request.GetSignByJsonStringMethod())
             {
-                GetJsonStringSign(request, requestTime);
+               return GetJsonStringSign(request, requestTime);
             }
 
-            Dictionary<string, string> dict = request.GetParams();
+            Dictionary<string, object> dict = request.GetParams();
             dict.Add("authCode", AuthCode);
             dict.Add("resource", request.GetApiName());
             dict.Add("requestTime", requestTime);
             dict.Add("versionNo", request.GetVersionNo());
             var asciiDict = AsciiDictionary(dict);
             string content = string.Empty;
-            foreach (KeyValuePair<string, string> pair in asciiDict)
+            foreach (KeyValuePair<string, object> pair in asciiDict)
             {
-                if (string.IsNullOrEmpty(pair.Value))
+                if (pair.Value == null || string.IsNullOrEmpty(pair.Value.ToString()))
                 {
                     continue;
                 }
@@ -121,7 +126,7 @@ namespace LianOk.Docking.Core
 
         private string GetJsonStringSign<T>(T request, string requestTime) where T : DockingRequestBase
         {
-            Dictionary<string, string> jsonStringDirt = new Dictionary<string, string>();
+            Dictionary<string, object> jsonStringDirt = new Dictionary<string, object>();
             jsonStringDirt.Add("authCode", AuthCode);
             if (request.GetParams() != null)
             {
@@ -132,9 +137,9 @@ namespace LianOk.Docking.Core
             jsonStringDirt.Add("versionNo", request.GetVersionNo());
             var asciiStringDict = AsciiDictionary(jsonStringDirt);
             string jsonStringcontent = string.Empty;
-            foreach (KeyValuePair<string, string> pair in asciiStringDict)
+            foreach (KeyValuePair<string, object> pair in asciiStringDict)
             {
-                if (string.IsNullOrEmpty(pair.Value))
+                if (pair.Value == null || string.IsNullOrEmpty(pair.Value.ToString()))
                 {
                     continue;
                 }

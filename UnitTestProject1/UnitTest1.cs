@@ -251,10 +251,54 @@ namespace UnitTestProject1
 
         }
 
+        #region 入件相关接口
+        /// <summary>
+        /// 查询商户入件状态
+        /// </summary>
+        /// 
+        [TestMethod]
+        public void ApiHlShopEntryStatus()
+        {
+            DefaultClient client = getClient();
+            ApiHlShopEntryStatusRequest request = new ApiHlShopEntryStatusRequest();
+            request.MerchantNo = MERCHANT;
+            request.ChannelCode = "leShua";
+            var response = client.GetResponse<ApiHlShopEntryStatusRequest, ApiHlShopEntryStatusResponse>(request);
+        }
+
+        /// <summary>
+        /// 查询微信授权状态
+        /// </summary>
+        /// 
+        [TestMethod]
+        public void ApiHlShopQueryWxAuthorizeState()
+        {
+            DefaultClient client = getClient();
+            ApiHlShopQueryWxAuthorizeStateRequest request = new ApiHlShopQueryWxAuthorizeStateRequest();
+            request.MerchantNo = MERCHANT;
+            request.ChannelCode = "leShua";
+            var response = client.GetResponse<ApiHlShopQueryWxAuthorizeStateRequest, ApiHlShopQueryWxAuthorizeStateResponse>(request);
+        }
+
+        /// <summary>
+        /// 查询支付宝授权状态
+        /// </summary>
+        /// 
+        [TestMethod]
+        public void ApiHlShopQueryZfbAuthorizeState()
+        {
+            DefaultClient client = getClient();
+            ApiHlShopQueryZfbAuthorizeStateRequest request = new ApiHlShopQueryZfbAuthorizeStateRequest();
+            request.MerchantNo = MERCHANT;
+            request.ChannelCode = "leShua";
+            var response = client.GetResponse<ApiHlShopQueryZfbAuthorizeStateRequest, ApiHlShopQueryZfbAuthorizeStateResponse>(request);
+        }
+
 
         /// <summary>
         /// 查询子商户号
         /// </summary>
+        /// 
         [TestMethod]
         public void ApiHlShopQuerySubMchId()
         {
@@ -263,8 +307,9 @@ namespace UnitTestProject1
             request.MerchantNo = MERCHANT;
             request.ChannelCode = "leShua";
             var response = client.GetResponse<ApiHlShopQuerySubMchIdRequest, ApiHlShopQuerySubMchIdResponse>(request);
-
         }
+
+        #endregion
 
     }
 }

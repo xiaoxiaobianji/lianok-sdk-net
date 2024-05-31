@@ -40,5 +40,14 @@ namespace LianOk.Docking.Entity.Request.BranchShop
         /// </summary>
         [JsonProperty(PropertyName = "currentPage")]
         public int CurrentPage { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

@@ -60,5 +60,14 @@ namespace LianOk.Docking.Entity.Request.BranchShop
         /// </summary>
         [JsonProperty(PropertyName = "contacter")]
         public string Contacter { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }
