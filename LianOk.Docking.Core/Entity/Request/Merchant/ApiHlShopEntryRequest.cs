@@ -76,6 +76,8 @@ namespace LianOk.Docking.Entity.Request.Merchant
         public string MerchantCashDeskImg { get; set; }
         [JsonProperty(PropertyName = "mccCode")]
         public string MccCode { get; set; }
+        [JsonProperty(PropertyName = "consignmentImg")]
+        public string ConsignmentImg { get; set; }
         [JsonProperty(PropertyName = "settleType")]
         public string SettleType { get; set; }
         [JsonProperty(PropertyName = "bankAccountName")]

@@ -14,6 +14,6 @@ namespace LianOk.Docking.Core
         /// 业务参数
         /// </summary>
         /// <returns></returns>
-        Dictionary<string, string> GetParams();
+        Dictionary<string, object> GetParams();
     }
 }

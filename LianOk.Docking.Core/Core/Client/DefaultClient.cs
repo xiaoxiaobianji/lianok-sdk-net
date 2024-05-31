@@ -1,6 +1,7 @@
 ﻿using LianOk.Docking.Core.Http;
 using LianOk.Docking.Core.Utils;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,7 @@ namespace LianOk.Docking.Core
         {
             string requestTime = DateTime.Now.ToString("yyyyMMddHHmmss");
             var sign = GetSign(request, requestTime);
-            JsonSerializerSettings setting = new JsonSerializerSettings();
+            JsonSerializerSettings setting = new JsonSerializerSettings { Formatting = Formatting.None };
             setting.NullValueHandling = NullValueHandling.Ignore;
             var req = new LianOkRequest
             {
@@ -57,7 +58,7 @@ namespace LianOk.Docking.Core
                 RequestTime = requestTime,
                 BizContent = JsonConvert.SerializeObject(request, setting)
             };
-            var content = JsonConvert.SerializeObject(req, setting);
+            var content = JsonConvert.SerializeObject(req);
             var contentBytes = Encoding.UTF8.GetBytes(content);
             HttpRequest httpRequest = new HttpRequest(Url).SetContent(contentBytes, "utf-8", FormatType.JSON);
             HttpResponse response = HttpResponse.GetResponse(httpRequest, httpRequest.TimeoutInMilliSeconds);
@@ -148,14 +149,14 @@ namespace LianOk.Docking.Core
 
         }
 
-            private Dictionary<string, string> AsciiDictionary(Dictionary<string, string> sArray)
+        private Dictionary<string, object> AsciiDictionary(Dictionary<string, object> sArray)
         {
-            Dictionary<string, string> asciiDic = new Dictionary<string, string>();
+            Dictionary<string, object> asciiDic = new Dictionary<string, object>();
             string[] arrKeys = sArray.Keys.ToArray();
             Array.Sort(arrKeys, string.CompareOrdinal);
             foreach (var key in arrKeys)
             {
-                string value = sArray[key];
+                object value = sArray[key];
                 asciiDic.Add(key, value);
             }
             return asciiDic;
