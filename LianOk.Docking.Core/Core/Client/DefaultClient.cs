@@ -89,6 +89,12 @@ namespace LianOk.Docking.Core
 
         private string GetSign<T>(T request, string requestTime) where T : DockingRequestBase
         {
+            //如果走新签名方式，直接用json拼接签名
+            if (request.GetSignByJsonStringMethod())
+            {
+                GetJsonStringSign(request, requestTime);
+            }
+
             Dictionary<string, string> dict = request.GetParams();
             dict.Add("authCode", AuthCode);
             dict.Add("resource", request.GetApiName());
@@ -112,7 +118,37 @@ namespace LianOk.Docking.Core
                 throw new Exception("未实现签名方法");
         }
 
-        private Dictionary<string, string> AsciiDictionary(Dictionary<string, string> sArray)
+        private string GetJsonStringSign<T>(T request, string requestTime) where T : DockingRequestBase
+        {
+            Dictionary<string, string> jsonStringDirt = new Dictionary<string, string>();
+            jsonStringDirt.Add("authCode", AuthCode);
+            if (request.GetParams() != null)
+            {
+                jsonStringDirt.Add("params", JsonConvert.SerializeObject(request.GetParams()));
+            }
+            jsonStringDirt.Add("resource", request.GetApiName());
+            jsonStringDirt.Add("requestTime", requestTime);
+            jsonStringDirt.Add("versionNo", request.GetVersionNo());
+            var asciiStringDict = AsciiDictionary(jsonStringDirt);
+            string jsonStringcontent = string.Empty;
+            foreach (KeyValuePair<string, string> pair in asciiStringDict)
+            {
+                if (string.IsNullOrEmpty(pair.Value))
+                {
+                    continue;
+                }
+                jsonStringcontent = $"{jsonStringcontent}{pair.Key}={pair.Value}&";
+            }
+            jsonStringcontent = jsonStringcontent.ToLower() + Salt;
+
+            if (request.GetEncryptType().Equals(EncryEnum.MD5))
+                return ParameterHelper.Md5Sum(Encoding.UTF8.GetBytes(jsonStringcontent)).ToLower();
+            else
+                throw new Exception("未实现签名方法");
+
+        }
+
+            private Dictionary<string, string> AsciiDictionary(Dictionary<string, string> sArray)
         {
             Dictionary<string, string> asciiDic = new Dictionary<string, string>();
             string[] arrKeys = sArray.Keys.ToArray();

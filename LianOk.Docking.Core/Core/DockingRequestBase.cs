@@ -56,5 +56,14 @@ namespace LianOk.Docking.Core
         {
             return "1";
         }
+
+        /// <summary>
+        /// 签名方式
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool GetSignByJsonStringMethod()
+        {
+            return false;
+        }
     }
 }
