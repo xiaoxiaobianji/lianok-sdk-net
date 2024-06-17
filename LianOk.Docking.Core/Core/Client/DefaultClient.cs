@@ -23,16 +23,16 @@ namespace LianOk.Docking.Core
             switch (env)
             {
                 case EnvEnum.TEST:
-                    url = "http://testapi.intranet.aduer.com/open/v1/api/biz/do";
-                    entryUrl = "http://testapi.intranet.aduer.com/openapi/v2/api/biz/do";
+                    url = "https://testapi.intranet.aduer.com/open/v1/api/biz/do";
+                    entryUrl = "https://testapi.intranet.aduer.com/openapi/v2/api/biz/do";
                     break;
                 case EnvEnum.PRE:
                     url = "https://open.pre.lianok.com/open/v1/api/biz/do";
-                    entryUrl = "https://open.pre.lianok.com/openapi/v2/api/biz/do";
+                    entryUrl = "https://entry.pre.lianok.com/openapi/v2/api/biz/do";
                     break;
                 case EnvEnum.PUBLISH:
                     url = "https://open.lianok.com/open/v1/api/biz/do";
-                    entryUrl = "https://open.lianok.com/openapi/v2/api/biz/do";
+                    entryUrl = "https://entry.lianok.com/openapi/v2/api/biz/do";
                     break;
                 default:
                     throw new ArgumentNullException("环境参数错误");
