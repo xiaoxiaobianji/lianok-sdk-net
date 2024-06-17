@@ -82,16 +82,16 @@ namespace LianOk.Docking.Core
 
         private string GetSign<T>(T request, string requestTime) where T : DockingRequestBase
         {
-            Dictionary<string, string> dict = request.GetParams();
+            Dictionary<string, object> dict = request.GetParams();
             dict.Add("authCode", AuthCode);
             dict.Add("resource", request.GetApiName());
             dict.Add("requestTime", requestTime);
             dict.Add("versionNo", request.GetVersionNo());
             var asciiDict = AsciiDictionary(dict);
             string content = string.Empty;
-            foreach (KeyValuePair<string, string> pair in asciiDict)
+            foreach (KeyValuePair<string, object> pair in asciiDict)
             {
-                if (string.IsNullOrEmpty(pair.Value))
+                if (pair.Value == null || string.IsNullOrEmpty(pair.Value.ToString()))
                 {
                     continue;
                 }
@@ -105,14 +105,14 @@ namespace LianOk.Docking.Core
                 throw new Exception("未实现签名方法");
         }
 
-        private Dictionary<string, string> AsciiDictionary(Dictionary<string, string> sArray)
+        private Dictionary<string, object> AsciiDictionary(Dictionary<string, object> sArray)
         {
-            Dictionary<string, string> asciiDic = new Dictionary<string, string>();
+            Dictionary<string, object> asciiDic = new Dictionary<string, object>();
             string[] arrKeys = sArray.Keys.ToArray();
             Array.Sort(arrKeys, string.CompareOrdinal);
             foreach (var key in arrKeys)
             {
-                string value = sArray[key];
+                object value = sArray[key];
                 asciiDic.Add(key, value);
             }
             return asciiDic;

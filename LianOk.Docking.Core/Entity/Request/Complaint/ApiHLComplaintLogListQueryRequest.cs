@@ -32,5 +32,14 @@ namespace LianOk.Docking.Entity.Request.Complaint
 
         [JsonProperty(PropertyName = "endTime")]
         public string EndTime { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

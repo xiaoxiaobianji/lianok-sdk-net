@@ -55,5 +55,14 @@ namespace LianOk.Docking.Entity.Request.Complaint
         /// </summary>
         [JsonProperty(PropertyName = "actionType")]
         public string ActionType { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

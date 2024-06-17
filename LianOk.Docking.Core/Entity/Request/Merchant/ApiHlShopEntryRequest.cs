@@ -76,6 +76,8 @@ namespace LianOk.Docking.Entity.Request.Merchant
         public string MerchantCashDeskImg { get; set; }
         [JsonProperty(PropertyName = "mccCode")]
         public string MccCode { get; set; }
+        [JsonProperty(PropertyName = "consignmentImg")]
+        public string ConsignmentImg { get; set; }
         [JsonProperty(PropertyName = "settleType")]
         public string SettleType { get; set; }
         [JsonProperty(PropertyName = "bankAccountName")]
@@ -114,5 +116,14 @@ namespace LianOk.Docking.Entity.Request.Merchant
         public decimal CloudPayLe1000Rate { get; set; }
         [JsonProperty(PropertyName = "cloudPayGt1000Rate")]
         public decimal CloudPayGt1000Rate { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }

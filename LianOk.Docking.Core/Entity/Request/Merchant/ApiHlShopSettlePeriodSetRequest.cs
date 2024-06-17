@@ -32,5 +32,14 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "applySettlePeriod")]
         public int ApplySettlePeriod { get; set; }
+
+        /// <summary>
+        /// 签名规则
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetSignByJsonStringMethod()
+        {
+            return true;
+        }
     }
 }
