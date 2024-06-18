@@ -52,7 +52,7 @@ namespace LianOk.Docking.Entity.Response.Pay
         /// 支付方式
         /// </summary>
         [JsonProperty(PropertyName = "payWay")]
-        public string payWay { get; set; }
+        public string PayWay { get; set; }
 
         /// <summary>
         /// 支付时间
