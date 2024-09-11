@@ -14,7 +14,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         {
             return "api.hl.bill.set";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>

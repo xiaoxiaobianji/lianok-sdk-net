@@ -1,8 +1,7 @@
 ﻿using LianOk.Docking.Core;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -13,115 +12,157 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayMiniOrderCreateRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.mini.order.create";
         }
 
-        /**
-    * 商户号
-    */
-        public string merchantNo { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
-        public string operatorAccount { get; set; }
+        [JsonProperty(PropertyName = "operatorAccount")]
+        public string OperatorAccount { get; set; }
 
-        public string businessOrderNo { get; set; }
+        [JsonProperty(PropertyName = "businessOrderNo")]
+        public string BusinessOrderNo { get; set; }
 
-        public decimal payAmount { get; set; }
+        [JsonProperty(PropertyName = "payAmount")]
+        public decimal PayAmount { get; set; }
 
-        public string deviceNo { get; set; }
+        [JsonProperty(PropertyName = "deviceNo")]
+        public string DeviceNo { get; set; }
 
-        public string remark { get; set; }
+        [JsonProperty(PropertyName = "remark")]
+        public string Remark { get; set; }
 
-        public string notifyUrl { get; set; }
+        [JsonProperty(PropertyName = "notifyUrl")]
+        public string NotifyUrl { get; set; }
 
-        public string origin { get; set; }
+        [JsonProperty(PropertyName = "origin")]
+        public string Origin { get; set; }
 
-        public string payWay { get; set; }
+        [JsonProperty(PropertyName = "payWay")]
+        public string PayWay { get; set; }
 
-        public string stageType { get; set; }
+        [JsonProperty(PropertyName = "stageType")]
+        public string StageType { get; set; }
 
-        public int stageNum { get; set; }
+        [JsonProperty(PropertyName = "stageNum")]
+        public int StageNum { get; set; }
 
-        public int payUrlExpireTime { get; set; }
+        [JsonProperty(PropertyName = "payUrlExpireTime")]
+        public int PayUrlExpireTime { get; set; }
 
-        public int payExpireTime { get; set; }
+        [JsonProperty(PropertyName = "payExpireTime")]
+        public int PayExpireTime { get; set; }
 
         /**
          * 限制的支付类型
          */
-        public int limitPay { get; set; }
+
+        [JsonProperty(PropertyName = "limitPay")]
+        public int LimitPay { get; set; }
 
         /**
          * 订单标题
          */
-        public string subject { get; set; }
+
+        [JsonProperty(PropertyName = "subject")]
+        public string Subject { get; set; }
 
         /**
          * 订单优惠标记
          */
-        public string goodsTag { get; set; }
+
+        [JsonProperty(PropertyName = "goodsTag")]
+        public string GoodsTag { get; set; }
 
         /**
          * 优惠详情信息上传该参数作为优惠券核销
          */
-        public string goodsInfo { get; set; }
+
+        [JsonProperty(PropertyName = "goodsInfo")]
+        public string GoodsInfo { get; set; }
 
         /**
          * 订单分账标记 0=普通订单 1=分账订单 2=延时结算订单
          */
-        public int shareMarkFlag { get; set; }
+
+        [JsonProperty(PropertyName = "shareMarkFlag")]
+        public int ShareMarkFlag { get; set; }
 
         /**
          * 支付宝sellerId
          */
-        public string sellerId { get; set; }
+
+        [JsonProperty(PropertyName = "sellerId")]
+        public string SellerId { get; set; }
+
         /**
          * 支付宝userId
          */
-        public string userId { get; set; }
+
+        [JsonProperty(PropertyName = "userId")]
+        public string UserId { get; set; }
 
         /**
          * 用户端ip
          */
-        public string remoteIp { get; set; }
+
+        [JsonProperty(PropertyName = "remoteIp")]
+        public string RemoteIp { get; set; }
 
         /**
          * 追踪ID
          * 公域分发场景必传,会影响主播归因、分享员归因等；通过调用 my.checkBeforeAddOrder 接口返回
          */
-        public string sourceId { get; set; }
+
+        [JsonProperty(PropertyName = "sourceId")]
+        public string SourceId { get; set; }
 
         /**
          * 订单类型
          * 电商购物: KX_SHOPPING  团购劵: GROUP_SECURITIES  虚拟商品: VIRTUAL_RECHARGE
          */
-        public string merchantBizType { get; set; }
+
+        [JsonProperty(PropertyName = "merchantBizType")]
+        public string MerchantBizType { get; set; }
 
         /**
          * 商家小程序对应的订单详情页路径地址
          */
-        public string path { get; set; }
 
-        public override bool GetSignByObjectMethod()
+        [JsonProperty(PropertyName = "path")]
+        public string Path { get; set; }
+
+        [JsonProperty(PropertyName = "contactInfo")]
+        public MiniOrderCreateContactInfo ContactInfo { get; set; }
+
+        [JsonProperty(PropertyName = "addressInfo")]
+        public MiniOrderCreateAddressInfo AddressInfo { get; set; }
+
+        [JsonProperty(PropertyName = "orderDetail")]
+        public MiniOrderCreateOrderDetail OrderDetail { get; set; }
+
+        [JsonProperty(PropertyName = "promoDetailInfo")]
+        public MiniOrderCreatePromoDetailInfo PromoDetailInfo { get; set; }
+
+        [JsonProperty(PropertyName = "extInfo")]
+        public MiniOrderCreateExtInfo ExtInfo { get; set; }
+
+        [JsonProperty(PropertyName = "deliveryDetail")]
+        public MiniOrderCreateDeliveryDetail DeliveryDetail { get; set; }
+
+        [JsonProperty(PropertyName = "defaultReceivingAddress")]
+        public MiniOrderCreateDefaultReceivingAddress DefaultReceivingAddress { get; set; }
+
+        public override bool GetNewRoute()
         {
             return true;
         }
-
-
-        //public virtual bool SetSignByObjectMethod()
-        //{
-        //    return true;
-        //}
-
-        public MiniOrderCreateContactInfo contactInfo;
-        public MiniOrderCreateAddressInfo addressInfo;
-        public MiniOrderCreateOrderDetail orderDetail;
-        public MiniOrderCreatePromoDetailInfo promoDetailInfo;
-        public MiniOrderCreateExtInfo extInfo;
-        public MiniOrderCreateDeliveryDetail deliveryDetail;
-        public MiniOrderCreateDefaultReceivingAddress defaultReceivingAddress;
 
         /**
          * 支付宝小程序组件买家联系人信息
@@ -129,9 +170,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
          * @author linshu
          * @create 2023/11/7 10:15
          */
+
         public class MiniOrderCreateContactInfo
         {
-
             /**
              * 手机号
              */
@@ -145,9 +186,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 支付宝小程序组件订单收货地址
          */
+
         public class MiniOrderCreateAddressInfo
         {
-
             /**
              * 收货人姓名
              */
@@ -168,12 +209,12 @@ namespace LianOk.Docking.Entity.Request.Alipay
              * 标准城市域码
              */
             public string receiverDivisionCode { get; set; }
-
         }
 
         /**
          * 订单信息
          */
+
         public class MiniOrderCreateOrderDetail
         {
             public List<MiniOrderCreateItemInfos> itemInfos { get; set; }
@@ -181,9 +222,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
             /**
              * 商品详细信息
              */
+
             public class MiniOrderCreateItemInfos
             {
-
                 /**
                  * 商户商品ID
                  */
@@ -233,9 +274,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
                 /**
                  * 租金信息
                  */
+
                 public class MiniOrderCreateItemRentInfo
                 {
-
                     public string initialRentPrice { get; set; }
                     public string periodRealRentPrice { get; set; }
                     public string periodNum { get; set; }
@@ -244,16 +285,15 @@ namespace LianOk.Docking.Entity.Request.Alipay
                     public string addonPeriodNum { get; set; }
                     public string addonRealRentPrice { get; set; }
                     public string imageMaterialId { get; set; }
-
                 }
             }
 
             /**
              * 价格详细信息
              */
+
             public class MiniOrderCreatePriceInfo
             {
-
                 /**
                  * 运费
                  */
@@ -273,16 +313,12 @@ namespace LianOk.Docking.Entity.Request.Alipay
             }
         }
 
-
-
-
-
         /**
          * 订单优惠信息
          */
+
         public class MiniOrderCreatePromoDetailInfo
         {
-
             /**
              * 优惠活动咨询ID
              * 优惠前置咨询组件返回的优惠活动咨询ID
@@ -293,9 +329,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 订单扩展字段
          */
+
         public class MiniOrderCreateExtInfo
         {
-
             public DateTime doorTime { get; set; }
             public string orderStr { get; set; }
         }
@@ -303,6 +339,7 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 物流信息
          */
+
         public class MiniOrderCreateDeliveryDetail
         {
             public string deliveryType { get; set; }
@@ -312,16 +349,14 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 默认退货地址
          */
+
         public class MiniOrderCreateDefaultReceivingAddress
         {
-
             public string receiverName { get; set; }
             public string detailedAddress { get; set; }
             public string telNumber { get; set; }
             public string receiverZip { get; set; }
             public string receiverDivisionCode { get; set; }
         }
-
     }
 }
-

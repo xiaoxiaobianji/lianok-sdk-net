@@ -9,7 +9,6 @@ using LianOk.Docking.Entity.Response.Bill;
 using LianOk.Docking.Entity.Response.Merchant;
 using LianOk.Docking.Entity.Response.Pay;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 
@@ -21,6 +20,7 @@ namespace UnitTestProject1
         private const string MERCHANT = "102326";
         private const string ACCOUNT = "18763825273";
         private const string ORDERNO = "1223356";
+
         private DefaultClient getClient()
         {
             DefaultClient client = new DefaultClient(EnvEnum.TEST, "1423254150000001", "hOnHeN2daY");
@@ -63,6 +63,7 @@ namespace UnitTestProject1
             };
             var response = client.GetResponse<ApiHlOrderPayBarcodeRequest, ApiHlOrderPayBarcodeResponse>(request);
         }
+
         [TestMethod]
         public void ApiHlShopDetailTest()
         {
@@ -115,9 +116,9 @@ namespace UnitTestProject1
                 MerchantNo = MERCHANT,
                 OperatorAccount = ACCOUNT,
                 PayAmount = 0.01M,
-                Remark = "remark3",
-                PayWay = "wechat",
-                Subject = "微信小商品"
+                Remark = "",
+                PayWay = "",
+                Subject = "小商品"
             };
             var response = client.GetResponse<ApiHlOrderPayUnifiedRequest, ApiHlOrderPayUnifiedResponse>(request);
         }
@@ -212,17 +213,17 @@ namespace UnitTestProject1
             DefaultClient client = getClient();
             ApiHlAlipayMiniOrderCreateRequest request = new ApiHlAlipayMiniOrderCreateRequest();
             var flowNo = DateTime.Now.ToString("yyyyMMddHHmmss");
-            request.businessOrderNo = flowNo + "001";
-            request.subject = "Iphone14 256G";
-            request.path = "/pages/index/index?orderId=10190608609185";
+            request.BusinessOrderNo = flowNo + "001";
+            request.Subject = "Iphone14 256G";
+            request.Path = "/pages/index/index?orderId=10190608609185";
             //request.setSourceId("MjAfSVNfTlVMA==");
-            request.userId = "2088612535104436";
-            request.merchantNo = "102326";
-            request.operatorAccount = "18763825273";
-            request.payAmount = 1.0M;
+            request.UserId = "2088612535104436";
+            request.MerchantNo = "102326";
+            request.OperatorAccount = "18763825273";
+            request.PayAmount = 1.0M;
 
             //request.setMerchantBizType("CHARGING_PILE");
-            request.merchantBizType = "KX_SHOPPING";
+            request.MerchantBizType = "KX_SHOPPING";
             ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail orderDetail = new ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail();
             List<ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail.MiniOrderCreateItemInfos> itemInfos = new List<ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail.MiniOrderCreateItemInfos>();
             ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail.MiniOrderCreateItemInfos itemInfo
@@ -245,17 +246,17 @@ namespace UnitTestProject1
             priceInfo.discountedPrice = "88.88";
             priceInfo.orderPrice = "88.88";
             orderDetail.priceInfo = priceInfo;
-            request.orderDetail = orderDetail;
+            request.OrderDetail = orderDetail;
 
             var response = client.GetResponse<ApiHlAlipayMiniOrderCreateRequest, ApiHlAlipayMiniOrderCreateResponse>(request);
-
         }
 
         #region 入件相关接口
+
         /// <summary>
         /// 查询商户入件状态
         /// </summary>
-        /// 
+        ///
         [TestMethod]
         public void ApiHlShopEntryStatus()
         {
@@ -269,21 +270,21 @@ namespace UnitTestProject1
         /// <summary>
         /// 查询微信授权状态
         /// </summary>
-        /// 
+        ///
         [TestMethod]
         public void ApiHlShopQueryWxAuthorizeState()
         {
             DefaultClient client = getClient();
             ApiHlShopQueryWxAuthorizeStateRequest request = new ApiHlShopQueryWxAuthorizeStateRequest();
             request.MerchantNo = MERCHANT;
-            request.ChannelCode = "leShua";
+            request.ChannelCode = "";
             var response = client.GetResponse<ApiHlShopQueryWxAuthorizeStateRequest, ApiHlShopQueryWxAuthorizeStateResponse>(request);
         }
 
         /// <summary>
         /// 查询支付宝授权状态
         /// </summary>
-        /// 
+        ///
         [TestMethod]
         public void ApiHlShopQueryZfbAuthorizeState()
         {
@@ -294,11 +295,10 @@ namespace UnitTestProject1
             var response = client.GetResponse<ApiHlShopQueryZfbAuthorizeStateRequest, ApiHlShopQueryZfbAuthorizeStateResponse>(request);
         }
 
-
         /// <summary>
         /// 查询子商户号
         /// </summary>
-        /// 
+        ///
         [TestMethod]
         public void ApiHlShopQuerySubMchId()
         {
@@ -309,7 +309,6 @@ namespace UnitTestProject1
             var response = client.GetResponse<ApiHlShopQuerySubMchIdRequest, ApiHlShopQuerySubMchIdResponse>(request);
         }
 
-        #endregion
-
+        #endregion 入件相关接口
     }
 }

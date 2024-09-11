@@ -14,7 +14,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         {
             return "api.hl.bill.contract.accredit";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>
@@ -57,5 +57,10 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "shareCategory")]
         public int ShareCategory { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }

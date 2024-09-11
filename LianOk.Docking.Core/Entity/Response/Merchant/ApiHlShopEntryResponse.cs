@@ -9,6 +9,7 @@ namespace LianOk.Docking.Entity.Response.Merchant
     {
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo;
+
         [JsonProperty(PropertyName = "refundPassword")]
         public string RefundPassword;
     }

@@ -1,9 +1,5 @@
 ﻿using LianOk.Docking.Core;
-using LianOk.Docking.Entity.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Newtonsoft.Json;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,19 +10,29 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayLocalItemQueryRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.local.item.query";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
-        public string itemId { get; set; }
-        public string needEditSpu { get; set; }
-        public string outItemId { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
+
+        [JsonProperty(PropertyName = "itemId")]
+        public string ItemId { get; set; }
+
+        [JsonProperty(PropertyName = "needEditSpu")]
+        public string NeedEditSpu { get; set; }
+
+        [JsonProperty(PropertyName = "outItemId")]
+        public string OutItemId { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
-

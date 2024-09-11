@@ -15,7 +15,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         {
             return "api.hl.bill.rule.create";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>
@@ -33,7 +33,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "receiveMerchantNo")]
         public string ReceiveMerchantNo { get; set; }
-        
+
         /// <summary>
         /// 通道标识，
         /// leShua
@@ -53,7 +53,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "ruleEffectiveDate")]
         public DateTime RuleExpiredDate { get; set; }
-        
+
         /// <summary>
         /// 分账比例，万分位，如10000=100%
         /// </summary>
@@ -65,7 +65,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "maxShareAmount")]
         public string MaxShareAmount { get; set; }
-        
+
         /// <summary>
         /// 每月分账金额上限 单位元，精确到0.01
         /// </summary>
@@ -77,5 +77,10 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "shareRuleStatus")]
         public int ShareRuleStatus { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }

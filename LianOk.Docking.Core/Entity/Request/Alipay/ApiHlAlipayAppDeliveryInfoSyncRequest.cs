@@ -1,9 +1,7 @@
 ﻿using LianOk.Docking.Core;
 using LianOk.Docking.Entity.Model;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,21 +12,32 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayAppDeliveryInfoSyncRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.app.delivery.info.sync";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
-        public List<AppItemAttrVO> attrs;
-        public string deliveryId { get; set; }
-        public string deliveryName { get; set; }
-        public string deliveryType { get; set; }
+        [JsonProperty(PropertyName = "attrs")]
+        public List<AppItemAttrVO> Attrs;
+
+        [JsonProperty(PropertyName = "deliveryId")]
+        public string DeliveryId { get; set; }
+
+        [JsonProperty(PropertyName = "deliveryName")]
+        public string DeliveryName { get; set; }
+
+        [JsonProperty(PropertyName = "deliveryType")]
+        public string DeliveryType { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
-

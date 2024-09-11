@@ -12,11 +12,13 @@ namespace LianOk.Docking.Entity.Response.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public int Status;
+
         /// <summary>
         /// 原因
         /// </summary>
         [JsonProperty(PropertyName = "reason")]
         public String Reason;
+
         /// <summary>
         /// 记录时间
         /// </summary>

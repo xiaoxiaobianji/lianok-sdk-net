@@ -14,7 +14,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         {
             return "api.hl.bill.merchant.unbind";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>
@@ -38,5 +38,10 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "receiveChannelCode")]
         public string receiveChannelCode { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }

@@ -27,14 +27,19 @@ namespace LianOk.Docking.Core
                     continue;
                 var value = propertyInfo.GetValue(this, null);
                 if (value == null) continue;
+                if ("" == value.ToString())
+                {
+                    propertyInfo.SetValue(this, null, null);
+                    continue;
+                }
                 var jsonProperty = (JsonPropertyAttribute)propertyInfo.GetCustomAttributes(typeof(JsonPropertyAttribute), false).FirstOrDefault();
                 if (jsonProperty == null)
                 {
-                    dict.Add(propertyInfo.Name, value.ToString());
+                    dict.Add(propertyInfo.Name, value);
                 }
                 else
                 {
-                    dict.Add(jsonProperty.PropertyName, value.ToString());
+                    dict.Add(jsonProperty.PropertyName, value);
                 }
             }
             return dict;
@@ -58,19 +63,10 @@ namespace LianOk.Docking.Core
         }
 
         /// <summary>
-        /// 接口版本
-        /// </summary>
-        /// <returns></returns>
-        public virtual bool GetSignByObjectMethod()
-        {
-            return false;
-        }
-
-        /// <summary>
         /// 签名方式
         /// </summary>
         /// <returns></returns>
-        public virtual bool GetSignByJsonStringMethod()
+        public virtual bool GetNewRoute()
         {
             return false;
         }

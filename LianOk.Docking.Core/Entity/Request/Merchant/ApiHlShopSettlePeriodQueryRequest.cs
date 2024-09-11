@@ -5,7 +5,7 @@ namespace LianOk.Docking.Entity.Request.Merchant
 {
     /// <summary>
     /// 查询分时结算开通信息
-    /// 
+    ///
     /// 参考：https://www.yuque.com/youyun-8yqqt/vpbgq7/ktvzfk1f2867s844
     /// </summary>
     public class ApiHlShopSettlePeriodQueryRequest : DockingRequestBase
@@ -31,7 +31,7 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// 签名规则
         /// </summary>
         /// <returns></returns>
-        public override bool GetSignByJsonStringMethod()
+        public override bool GetNewRoute()
         {
             return true;
         }

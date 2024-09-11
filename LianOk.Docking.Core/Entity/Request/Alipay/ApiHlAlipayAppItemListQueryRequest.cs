@@ -1,9 +1,6 @@
 ﻿using LianOk.Docking.Core;
-using LianOk.Docking.Entity.Model;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,21 +11,35 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayAppItemListQueryRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.app.item.list.query";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
-        public List<string> itemIdList;
-        public List<string> outItemIdList;
-        public int pageNum { get; set; }
-        public int pageSize { get; set; }
-        public string spuStatus { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
+
+        [JsonProperty(PropertyName = "itemIdList")]
+        public List<string> ItemIdList { get; set; }
+
+        [JsonProperty(PropertyName = "outItemIdList")]
+        public List<string> OutItemIdList { get; set; }
+
+        [JsonProperty(PropertyName = "pageNum")]
+        public int PageNum { get; set; }
+
+        [JsonProperty(PropertyName = "pageSize")]
+        public int PageSize { get; set; }
+
+        [JsonProperty(PropertyName = "spuStatus")]
+        public string SpuStatus { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
-

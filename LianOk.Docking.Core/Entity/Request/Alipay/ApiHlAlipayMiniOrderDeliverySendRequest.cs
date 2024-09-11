@@ -1,8 +1,7 @@
 ﻿using LianOk.Docking.Core;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -13,7 +12,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayMiniOrderDeliverySendRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.mini.order.delivery.send";
@@ -22,23 +20,37 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 商户号
          */
-        public string merchantNo { get; set; }
+
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
         /**
          * 发货完成标志位, 0: 未发完, 1:已发完
          */
-        public int finishAllDelivery { get; set; }
+
+        [JsonProperty(PropertyName = "finishAllDelivery")]
+        public int FinishAllDelivery { get; set; }
+
         /**
          * 完成发货时间
          * finish_all_delivery = 1的时候 必传
          * 格式：2023-04-27 10:05:00
          */
-        public DateTime shipDoneTime { get; set; }
+
+        [JsonProperty(PropertyName = "shipDoneTime")]
+        public DateTime ShipDoneTime { get; set; }
+
         /**
          * 快递信息
          */
-        public List<AlipayOpenMiniOrderDeliveryList> deliveryList;
 
+        [JsonProperty(PropertyName = "deliveryList")]
+        public List<AlipayOpenMiniOrderDeliveryList> DeliveryList { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
 
         public class AlipayOpenMiniOrderDeliveryList
         {
@@ -77,4 +89,3 @@ namespace LianOk.Docking.Entity.Request.Alipay
         }
     }
 }
-

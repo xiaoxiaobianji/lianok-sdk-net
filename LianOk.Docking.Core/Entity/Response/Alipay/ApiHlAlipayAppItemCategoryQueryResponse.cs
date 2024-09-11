@@ -2,8 +2,6 @@
 using LianOk.Docking.Entity.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Response.Alipay
 {
@@ -14,6 +12,5 @@ namespace LianOk.Docking.Entity.Response.Alipay
          * 类目信息
          */
         public List<CategoryAndParentVO> cats;
-
     }
 }

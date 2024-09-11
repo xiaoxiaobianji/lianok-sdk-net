@@ -1,9 +1,5 @@
 ﻿using LianOk.Docking.Core;
-using LianOk.Docking.Entity.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Newtonsoft.Json;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,24 +10,41 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayCertUserBatchQueryRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.cert.user.batch.query";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
-        public string belongMerchantId { get; set; }
-        public string certificateStatus { get; set; }
-        public string openId { get; set; }
-        public int pageNum { get; set; }
-        public int pageSize { get; set; }
-        public string shopId { get; set; }
-        public string userId { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
+        [JsonProperty(PropertyName = "belongMerchantId")]
+        public string BelongMerchantId { get; set; }
+
+        [JsonProperty(PropertyName = "certificateStatus")]
+        public string CertificateStatus { get; set; }
+
+        [JsonProperty(PropertyName = "openId")]
+        public string OpenId { get; set; }
+
+        [JsonProperty(PropertyName = "pageNum")]
+        public int PageNum { get; set; }
+
+        [JsonProperty(PropertyName = "pageSize")]
+        public int PageSize { get; set; }
+
+        [JsonProperty(PropertyName = "shopId")]
+        public string ShopId { get; set; }
+
+        [JsonProperty(PropertyName = "userId")]
+        public string UserId { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
-

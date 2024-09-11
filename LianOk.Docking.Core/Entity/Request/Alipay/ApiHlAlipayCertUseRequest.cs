@@ -1,9 +1,8 @@
 ﻿using LianOk.Docking.Core;
 using LianOk.Docking.Entity.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,26 +13,47 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayCertUseRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.cert.use";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
-        public DateTime bizDt { get; set; }
-        public List<CertificateUseInfo> certificateUseInfoList;
-        public string code { get; set; }
-        public string openId { get; set; }
-        public string orderId { get; set; }
-        public string outBizNo { get; set; }
-        public string outOrderId { get; set; }
-        public string shopId { get; set; }
-        public string userId { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
+        [JsonProperty(PropertyName = "bizDt")]
+        public DateTime BizDt { get; set; }
+
+        [JsonProperty(PropertyName = "certificateUseInfoList")]
+        public List<CertificateUseInfo> CertificateUseInfoList { get; set; }
+
+        [JsonProperty(PropertyName = "code")]
+        public string Code { get; set; }
+
+        [JsonProperty(PropertyName = "openId")]
+        public string OpenId { get; set; }
+
+        [JsonProperty(PropertyName = "orderId")]
+        public string OrderId { get; set; }
+
+        [JsonProperty(PropertyName = "outBizNo")]
+        public string OutBizNo { get; set; }
+
+        [JsonProperty(PropertyName = "outOrderId")]
+        public string OutOrderId { get; set; }
+
+        [JsonProperty(PropertyName = "shopId")]
+        public string ShopId { get; set; }
+
+        [JsonProperty(PropertyName = "userId")]
+        public string UserId { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
-

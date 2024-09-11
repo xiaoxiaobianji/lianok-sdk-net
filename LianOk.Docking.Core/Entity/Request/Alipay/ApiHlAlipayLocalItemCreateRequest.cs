@@ -1,9 +1,7 @@
 ﻿using LianOk.Docking.Core;
 using LianOk.Docking.Entity.Model;
-using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -12,9 +10,8 @@ namespace LianOk.Docking.Entity.Request.Alipay
     ///
     /// 参考：https://www.yuque.com/youyun-8yqqt/vpbgq7/cygz5iulv5bxo59m
     /// </summary>
-    public class ApiHlAlipayLocalItemCreateRequest  : DockingRequestBase
+    public class ApiHlAlipayLocalItemCreateRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.local.item.create";
@@ -23,21 +20,52 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 商户号
          */
-        public string merchantNo { get; set; }
 
-        public List<AppItemAttrVO> attrs;
-        public string categoryId { get; set; }
-        public PhoneStructVO customerServiceMobile;
-        public string headImg { get; set; }
-        public List<string> imageList;
-        public string itemDetailsPageModel { get; set; }
-        public string itemType { get; set; }
-        public string merchantName { get; set; }
-        public string outItemId { get; set; }
-        public string path { get; set; }
-        public List<LocalItemSkuCreateVO> skus;
-        public TimeRangeStructVO soldTime;
-        public string title { get; set; }
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
+
+        [JsonProperty(PropertyName = "attrs")]
+        public List<AppItemAttrVO> Attrs { get; set; }
+
+        [JsonProperty(PropertyName = "categoryId")]
+        public string CategoryId { get; set; }
+
+        [JsonProperty(PropertyName = "customerServiceMobile")]
+        public PhoneStructVO CustomerServiceMobile { get; set; }
+
+        [JsonProperty(PropertyName = "headImg")]
+        public string HeadImg { get; set; }
+
+        [JsonProperty(PropertyName = "imageList")]
+        public List<string> ImageList { get; set; }
+
+        [JsonProperty(PropertyName = "itemDetailsPageModel")]
+        public string ItemDetailsPageModel { get; set; }
+
+        [JsonProperty(PropertyName = "itemType")]
+        public string ItemType { get; set; }
+
+        [JsonProperty(PropertyName = "merchantName")]
+        public string MerchantName { get; set; }
+
+        [JsonProperty(PropertyName = "outItemId")]
+        public string OutItemId { get; set; }
+
+        [JsonProperty(PropertyName = "path")]
+        public string Path { get; set; }
+
+        [JsonProperty(PropertyName = "skus")]
+        public List<LocalItemSkuCreateVO> Skus { get; set; }
+
+        [JsonProperty(PropertyName = "soldTime")]
+        public TimeRangeStructVO SoldTime { get; set; }
+
+        [JsonProperty(PropertyName = "title")]
+        public string Title { get; set; }
+
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
-

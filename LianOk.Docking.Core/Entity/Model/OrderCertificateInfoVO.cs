@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Model
 {
@@ -27,6 +24,5 @@ namespace LianOk.Docking.Entity.Model
          * 本地生活商品凭证核销时间
          */
         public string useTime { get; set; }
-
     }
 }
