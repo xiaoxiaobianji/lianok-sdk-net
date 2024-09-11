@@ -12,21 +12,25 @@ namespace LianOk.Docking.Entity.Response.Employee
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name;
+
         /// <summary>
         /// 员工账号-（登陆账号）
         /// </summary>
         [JsonProperty(PropertyName = "operatorAccount")]
         public string OperatorAccount;
+
         /// <summary>
         /// 管理密码（退款密码）
         /// </summary>
         [JsonProperty(PropertyName = "refundPassword")]
         public string RefundPassword;
+
         /// <summary>
         /// 商户编号
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo;
+
         /// <summary>
         /// 分店编号
         /// </summary>

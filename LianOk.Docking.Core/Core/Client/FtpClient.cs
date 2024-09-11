@@ -16,6 +16,7 @@ namespace LianOk.Docking.Core
             Account = account;
             Password = password;
         }
+
         public string GetResponse(string path)
         {
             return FtpHelper.DownloadFileString(string.Concat(Url, ":", Port, "/", path.TrimStart('/')), Account, Password);

@@ -4,7 +4,6 @@ namespace LianOk.Docking.Core
 {
     public abstract class DockingUploadImageRequest : DockingRequestBase
     {
-
         [JsonIgnore]
         public string FileName { get; set; }
 

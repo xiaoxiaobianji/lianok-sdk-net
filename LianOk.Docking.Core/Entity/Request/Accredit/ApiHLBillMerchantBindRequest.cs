@@ -44,6 +44,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "agreement")]
         public string Agreement { get; set; }
+
         public override bool GetNewRoute()
         {
             return true;

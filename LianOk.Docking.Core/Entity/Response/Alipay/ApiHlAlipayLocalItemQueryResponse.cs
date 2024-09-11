@@ -2,8 +2,6 @@
 using LianOk.Docking.Entity.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Response.Alipay
 {
@@ -117,6 +115,5 @@ namespace LianOk.Docking.Entity.Response.Alipay
          * 商品最新更新时间
          */
         public DateTime updateTime { get; set; }
-
     }
 }

@@ -1,10 +1,6 @@
 ﻿using LianOk.Docking.Core;
-using LianOk.Docking.Entity.Model;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -15,7 +11,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayAppDeliveryInfoQueryRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.app.delivery.info.query";
@@ -39,4 +34,3 @@ namespace LianOk.Docking.Entity.Request.Alipay
         }
     }
 }
-

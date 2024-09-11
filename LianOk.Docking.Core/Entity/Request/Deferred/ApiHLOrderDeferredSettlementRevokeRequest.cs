@@ -14,7 +14,7 @@ namespace LianOk.Docking.Entity.Request.Period
         {
             return "api.hl.order.deferredSettlementRevoke";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>
@@ -32,7 +32,7 @@ namespace LianOk.Docking.Entity.Request.Period
         /// </summary>
         [JsonProperty(PropertyName = "orderNo")]
         public string OrderNo { get; set; }
-        
+
         /// <summary>
         /// 对接商系统订单号
         /// </summary>

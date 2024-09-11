@@ -14,16 +14,19 @@ namespace LianOk.Docking.Entity.Response.Employee
         /// </summary>
         [JsonProperty(PropertyName = "totalCount")]
         public int TotalCount;
+
         /// <summary>
         /// 条数：10
         /// </summary>
         [JsonProperty(PropertyName = "pageSize")]
         public int PageSize;
+
         /// <summary>
         /// 页码：1
         /// </summary>
         [JsonProperty(PropertyName = "currentPage")]
         public int CurrentPage;
+
         /// <summary>
         /// 分店集合
         /// </summary>

@@ -35,11 +35,11 @@ namespace LianOk.Docking.Core
                 var jsonProperty = (JsonPropertyAttribute)propertyInfo.GetCustomAttributes(typeof(JsonPropertyAttribute), false).FirstOrDefault();
                 if (jsonProperty == null)
                 {
-                    dict.Add(propertyInfo.Name, value.ToString());
+                    dict.Add(propertyInfo.Name, value);
                 }
                 else
                 {
-                    dict.Add(jsonProperty.PropertyName, value.ToString());
+                    dict.Add(jsonProperty.PropertyName, value);
                 }
             }
             return dict;

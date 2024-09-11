@@ -1,7 +1,6 @@
 ﻿using LianOk.Docking.Core.Http;
 using LianOk.Docking.Core.Utils;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,14 +25,17 @@ namespace LianOk.Docking.Core
                     url = "https://testapi.intranet.aduer.com/open/v1/api/biz/do";
                     entryUrl = "https://testapi.intranet.aduer.com/openapi/v2/api/biz/do";
                     break;
+
                 case EnvEnum.PRE:
                     url = "https://open.pre.lianok.com/open/v1/api/biz/do";
                     entryUrl = "https://entry.pre.lianok.com/openapi/v2/api/biz/do";
                     break;
+
                 case EnvEnum.PUBLISH:
                     url = "https://open.lianok.com/open/v1/api/biz/do";
                     entryUrl = "https://entry.lianok.com/openapi/v2/api/biz/do";
                     break;
+
                 default:
                     throw new ArgumentNullException("环境参数错误");
             }
@@ -98,7 +100,7 @@ namespace LianOk.Docking.Core
             //如果走新签名方式，直接用json拼接签名
             if (request.GetNewRoute())
             {
-               return GetJsonStringSign(request, requestTime);
+                return GetJsonStringSign(request, requestTime);
             }
 
             Dictionary<string, object> dict = request.GetParams();
@@ -128,9 +130,10 @@ namespace LianOk.Docking.Core
         {
             Dictionary<string, object> jsonStringDirt = new Dictionary<string, object>();
             jsonStringDirt.Add("authCode", AuthCode);
-            if (request.GetParams() != null)
+            var temp = request.GetParams();
+            if (temp != null)
             {
-                jsonStringDirt.Add("params", JsonConvert.SerializeObject(request.GetParams()));
+                jsonStringDirt.Add("params", JsonConvert.SerializeObject(temp));
             }
             jsonStringDirt.Add("resource", request.GetApiName());
             jsonStringDirt.Add("requestTime", requestTime);
@@ -151,7 +154,6 @@ namespace LianOk.Docking.Core
                 return ParameterHelper.Md5Sum(Encoding.UTF8.GetBytes(jsonStringcontent)).ToLower();
             else
                 throw new Exception("未实现签名方法");
-
         }
 
         private Dictionary<string, object> AsciiDictionary(Dictionary<string, object> sArray)

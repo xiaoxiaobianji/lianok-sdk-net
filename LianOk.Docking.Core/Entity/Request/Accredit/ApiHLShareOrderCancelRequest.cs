@@ -14,7 +14,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         {
             return "api.hl.share.order.cancel";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>

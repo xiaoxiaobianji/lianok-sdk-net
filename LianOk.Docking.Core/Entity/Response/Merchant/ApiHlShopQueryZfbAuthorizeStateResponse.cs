@@ -12,16 +12,19 @@ namespace LianOk.Docking.Entity.Response.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo;
+
         /// <summary>
         /// 上游商户号
         /// </summary>
         [JsonProperty(PropertyName = "channelMerchantNo")]
         public string ChannelMerchantNo;
+
         /// <summary>
         /// 支付宝子商户号
         /// </summary>
         [JsonProperty(PropertyName = "alipayMerchantNo")]
         public string AlipayMerchantNo;
+
         /// <summary>
         /// 授权状态
         /// AUTHORIZED：已授权

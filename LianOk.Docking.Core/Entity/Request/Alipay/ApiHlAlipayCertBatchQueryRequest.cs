@@ -1,10 +1,6 @@
 ﻿using LianOk.Docking.Core;
-using LianOk.Docking.Entity.Model;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -15,7 +11,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayCertBatchQueryRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.cert.batch.query";
@@ -26,19 +21,22 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo { get; set; }
+
         [JsonProperty(PropertyName = "certificateIdList")]
         public List<string> CertificateIdList { get; set; }
+
         [JsonProperty(PropertyName = "openId")]
         public string OpenId { get; set; }
+
         [JsonProperty(PropertyName = "orderId")]
         public string OrderId { get; set; }
+
         [JsonProperty(PropertyName = "userId")]
         public string UserId { get; set; }
+
         public override bool GetNewRoute()
         {
             return true;
         }
-
     }
 }
-

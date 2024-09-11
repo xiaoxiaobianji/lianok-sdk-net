@@ -161,8 +161,8 @@ namespace LianOk.Docking.Core.Http
 
             PasrseHttpResponse(httpResponse, httpWebResponse);
             return httpResponse;
-
         }
+
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             HttpWebRequest httpWebRequest = null;

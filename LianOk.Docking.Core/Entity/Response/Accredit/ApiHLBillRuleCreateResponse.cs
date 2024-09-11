@@ -12,5 +12,5 @@ namespace LianOk.Docking.Entity.Response.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
-    } 
+    }
 }

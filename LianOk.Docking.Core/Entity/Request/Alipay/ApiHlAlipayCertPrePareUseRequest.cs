@@ -1,9 +1,5 @@
 ﻿using LianOk.Docking.Core;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,7 +10,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayCertPrePareUseRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.cert.pre.pare.use";
@@ -25,16 +20,16 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string merchantNo { get; set; }
-        [JsonProperty(PropertyName = "code")]
 
+        [JsonProperty(PropertyName = "code")]
         public string Code { get; set; }
+
         [JsonProperty(PropertyName = "encryptedData")]
         public string EncryptedData { get; set; }
+
         public override bool GetNewRoute()
         {
             return true;
         }
-
     }
 }
-

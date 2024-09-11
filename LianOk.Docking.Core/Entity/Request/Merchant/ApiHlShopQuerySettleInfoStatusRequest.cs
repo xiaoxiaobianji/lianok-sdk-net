@@ -5,7 +5,7 @@ namespace LianOk.Docking.Entity.Request.Merchant
 {
     /// <summary>
     /// 查询修改基础信息状态
-    /// 
+    ///
     /// 参考：https://www.yuque.com/youyun-8yqqt/vpbgq7/mntfmoctszr2aqod
     /// </summary>
     public class ApiHlShopQuerySettleInfoStatusRequest : DockingRequestBase
@@ -20,6 +20,7 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo { get; set; }
+
         /// <summary>
         /// 通道标识
         /// </summary>

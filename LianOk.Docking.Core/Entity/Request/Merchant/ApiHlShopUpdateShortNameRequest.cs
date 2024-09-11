@@ -5,7 +5,7 @@ namespace LianOk.Docking.Entity.Request.Merchant
 {
     /// <summary>
     /// 修改商户简称
-    /// 
+    ///
     /// 参考：https://www.yuque.com/youyun-8yqqt/vpbgq7/gpinf4pdeb2br9tk
     /// </summary>
     public class ApiHlShopUpdateShortNameRequest : DockingRequestBase
@@ -20,21 +20,25 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo { get; set; }
+
         /// <summary>
         /// 通道标识
         /// </summary>
         [JsonProperty(PropertyName = "channelCode")]
         public string ChannelCode { get; set; }
+
         /// <summary>
         /// 异步通知地址
         /// </summary>
         [JsonProperty(PropertyName = "notifyUrl")]
         public string NotifyUrl { get; set; }
+
         /// <summary>
         /// 商户简称
         /// </summary>
         [JsonProperty(PropertyName = "merchantShortName")]
         public string MerchantShortName { get; set; }
+
         /// <summary>
         /// 资料变更申请书
         /// </summary>

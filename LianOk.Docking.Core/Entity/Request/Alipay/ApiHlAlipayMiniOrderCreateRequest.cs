@@ -2,8 +2,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,7 +12,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayMiniOrderCreateRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.mini.order.create";
@@ -65,47 +62,56 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 限制的支付类型
          */
+
         [JsonProperty(PropertyName = "limitPay")]
         public int LimitPay { get; set; }
 
         /**
          * 订单标题
          */
+
         [JsonProperty(PropertyName = "subject")]
         public string Subject { get; set; }
 
         /**
          * 订单优惠标记
          */
+
         [JsonProperty(PropertyName = "goodsTag")]
         public string GoodsTag { get; set; }
 
         /**
          * 优惠详情信息上传该参数作为优惠券核销
          */
+
         [JsonProperty(PropertyName = "goodsInfo")]
         public string GoodsInfo { get; set; }
 
         /**
          * 订单分账标记 0=普通订单 1=分账订单 2=延时结算订单
          */
+
         [JsonProperty(PropertyName = "shareMarkFlag")]
         public int ShareMarkFlag { get; set; }
 
         /**
          * 支付宝sellerId
          */
+
         [JsonProperty(PropertyName = "sellerId")]
         public string SellerId { get; set; }
+
         /**
          * 支付宝userId
          */
+
         [JsonProperty(PropertyName = "userId")]
         public string UserId { get; set; }
 
         /**
          * 用户端ip
          */
+
         [JsonProperty(PropertyName = "remoteIp")]
         public string RemoteIp { get; set; }
 
@@ -113,6 +119,7 @@ namespace LianOk.Docking.Entity.Request.Alipay
          * 追踪ID
          * 公域分发场景必传,会影响主播归因、分享员归因等；通过调用 my.checkBeforeAddOrder 接口返回
          */
+
         [JsonProperty(PropertyName = "sourceId")]
         public string SourceId { get; set; }
 
@@ -120,27 +127,35 @@ namespace LianOk.Docking.Entity.Request.Alipay
          * 订单类型
          * 电商购物: KX_SHOPPING  团购劵: GROUP_SECURITIES  虚拟商品: VIRTUAL_RECHARGE
          */
+
         [JsonProperty(PropertyName = "merchantBizType")]
         public string MerchantBizType { get; set; }
 
         /**
          * 商家小程序对应的订单详情页路径地址
          */
+
         [JsonProperty(PropertyName = "path")]
         public string Path { get; set; }
 
         [JsonProperty(PropertyName = "contactInfo")]
         public MiniOrderCreateContactInfo ContactInfo { get; set; }
+
         [JsonProperty(PropertyName = "addressInfo")]
         public MiniOrderCreateAddressInfo AddressInfo { get; set; }
+
         [JsonProperty(PropertyName = "orderDetail")]
         public MiniOrderCreateOrderDetail OrderDetail { get; set; }
+
         [JsonProperty(PropertyName = "promoDetailInfo")]
         public MiniOrderCreatePromoDetailInfo PromoDetailInfo { get; set; }
+
         [JsonProperty(PropertyName = "extInfo")]
         public MiniOrderCreateExtInfo ExtInfo { get; set; }
+
         [JsonProperty(PropertyName = "deliveryDetail")]
         public MiniOrderCreateDeliveryDetail DeliveryDetail { get; set; }
+
         [JsonProperty(PropertyName = "defaultReceivingAddress")]
         public MiniOrderCreateDefaultReceivingAddress DefaultReceivingAddress { get; set; }
 
@@ -148,15 +163,16 @@ namespace LianOk.Docking.Entity.Request.Alipay
         {
             return true;
         }
+
         /**
          * 支付宝小程序组件买家联系人信息
          *
          * @author linshu
          * @create 2023/11/7 10:15
          */
+
         public class MiniOrderCreateContactInfo
         {
-
             /**
              * 手机号
              */
@@ -170,9 +186,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 支付宝小程序组件订单收货地址
          */
+
         public class MiniOrderCreateAddressInfo
         {
-
             /**
              * 收货人姓名
              */
@@ -193,12 +209,12 @@ namespace LianOk.Docking.Entity.Request.Alipay
              * 标准城市域码
              */
             public string receiverDivisionCode { get; set; }
-
         }
 
         /**
          * 订单信息
          */
+
         public class MiniOrderCreateOrderDetail
         {
             public List<MiniOrderCreateItemInfos> itemInfos { get; set; }
@@ -206,9 +222,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
             /**
              * 商品详细信息
              */
+
             public class MiniOrderCreateItemInfos
             {
-
                 /**
                  * 商户商品ID
                  */
@@ -258,9 +274,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
                 /**
                  * 租金信息
                  */
+
                 public class MiniOrderCreateItemRentInfo
                 {
-
                     public string initialRentPrice { get; set; }
                     public string periodRealRentPrice { get; set; }
                     public string periodNum { get; set; }
@@ -269,16 +285,15 @@ namespace LianOk.Docking.Entity.Request.Alipay
                     public string addonPeriodNum { get; set; }
                     public string addonRealRentPrice { get; set; }
                     public string imageMaterialId { get; set; }
-
                 }
             }
 
             /**
              * 价格详细信息
              */
+
             public class MiniOrderCreatePriceInfo
             {
-
                 /**
                  * 运费
                  */
@@ -298,16 +313,12 @@ namespace LianOk.Docking.Entity.Request.Alipay
             }
         }
 
-
-
-
-
         /**
          * 订单优惠信息
          */
+
         public class MiniOrderCreatePromoDetailInfo
         {
-
             /**
              * 优惠活动咨询ID
              * 优惠前置咨询组件返回的优惠活动咨询ID
@@ -318,9 +329,9 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 订单扩展字段
          */
+
         public class MiniOrderCreateExtInfo
         {
-
             public DateTime doorTime { get; set; }
             public string orderStr { get; set; }
         }
@@ -328,6 +339,7 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 物流信息
          */
+
         public class MiniOrderCreateDeliveryDetail
         {
             public string deliveryType { get; set; }
@@ -337,16 +349,14 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 默认退货地址
          */
+
         public class MiniOrderCreateDefaultReceivingAddress
         {
-
             public string receiverName { get; set; }
             public string detailedAddress { get; set; }
             public string telNumber { get; set; }
             public string receiverZip { get; set; }
             public string receiverDivisionCode { get; set; }
         }
-
     }
 }
-

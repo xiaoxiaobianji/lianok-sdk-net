@@ -47,7 +47,7 @@ namespace LianOk.Docking.Entity.Response.Pay
         /// </summary>
         [JsonProperty(PropertyName = "actualAmount")]
         public decimal? ActualAmount { get; set; }
-        
+
         /// <summary>
         /// 支付方式
         /// </summary>

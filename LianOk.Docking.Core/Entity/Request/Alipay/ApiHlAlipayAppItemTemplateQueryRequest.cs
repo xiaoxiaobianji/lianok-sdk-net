@@ -1,9 +1,5 @@
 ﻿using LianOk.Docking.Core;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -14,7 +10,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayAppItemTemplateQueryRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.app.item.template.query";
@@ -32,6 +27,7 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /// </summary>
         [JsonProperty(PropertyName = "categoryId")]
         public string CategoryId { get; set; }
+
         /// <summary>
         /// 新请求线路
         /// </summary>
@@ -42,4 +38,3 @@ namespace LianOk.Docking.Entity.Request.Alipay
         }
     }
 }
-

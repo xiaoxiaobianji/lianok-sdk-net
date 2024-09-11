@@ -1,10 +1,5 @@
 ﻿using LianOk.Docking.Core;
-using LianOk.Docking.Entity.Model;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LianOk.Docking.Entity.Request.Alipay
 {
@@ -15,7 +10,6 @@ namespace LianOk.Docking.Entity.Request.Alipay
     /// </summary>
     public class ApiHlAlipayMarkeringEnhanceUploadRequest : DockingRequestBase
     {
-
         public override string GetApiName()
         {
             return "api.hl.alipay.markering.enhance.upload";
@@ -26,6 +20,7 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /// </summary>
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo { get; set; }
+
         [JsonProperty(PropertyName = "base64Encode")]
         public string Base64Encode { get; set; }
 
@@ -38,16 +33,16 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /// </summary>
         [JsonProperty(PropertyName = "uploadScene")]
         public string UploadScene { get; set; }
+
         /// <summary>
         /// 营销图片优化上传接口
         /// </summary>
         [JsonProperty(PropertyName = "needEnhance")]
         public bool NeedEnhance { get; set; }
+
         public override bool GetNewRoute()
         {
             return true;
         }
-
     }
 }
-

@@ -22,12 +22,15 @@ namespace LianOk.Docking.Core
                 case EnvEnum.TEST:
                     url = "https://testapi.intranet.aduer.com/open/v1/api/biz/do";
                     break;
+
                 case EnvEnum.PRE:
                     url = "https://open.pre.lianok.com/open/v1/api/biz/do";
                     break;
+
                 case EnvEnum.PUBLISH:
-                    url = "https://open.lianok.com/open/v1/api/biz/do";
+                    url = "https://entry.lianok.com/openapi/v2/api/biz/do";
                     break;
+
                 default:
                     throw new ArgumentNullException("环境参数错误");
             }
@@ -35,6 +38,7 @@ namespace LianOk.Docking.Core
             AuthCode = authCode;
             Salt = secret;
         }
+
         protected HttpResponse DoAction<T>(T request) where T : DockingRequestBase
         {
             if (!(request is DockingUploadImageRequest))
@@ -63,7 +67,6 @@ namespace LianOk.Docking.Core
             var httpResponse = this.DoAction(request);
             return ParseAcsResponses<R>(httpResponse);
         }
-
 
         private ResponseResultBase<T> ParseAcsResponses<T>(HttpResponse httpResponse) where T : DockingResponseBase, new()
         {

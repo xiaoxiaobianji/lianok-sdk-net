@@ -1,5 +1,4 @@
 ﻿using LianOk.Docking.Core;
-using Newtonsoft.Json;
 using System;
 
 namespace LianOk.Docking.Entity.Response.Accredit
@@ -7,6 +6,5 @@ namespace LianOk.Docking.Entity.Response.Accredit
     [Serializable]
     public class ApiHLBillRuleUpdateResponse : DockingResponseBase
     {
-
-    } 
+    }
 }

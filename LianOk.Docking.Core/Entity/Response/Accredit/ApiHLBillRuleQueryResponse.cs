@@ -14,5 +14,5 @@ namespace LianOk.Docking.Entity.Response.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "ruleList")]
         public List<HlBillRuleInfo> RuleList { get; set; }
-    } 
+    }
 }

@@ -9,8 +9,10 @@ namespace LianOk.Docking.Entity.Response.BranchShop
     {
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo;
+
         [JsonProperty(PropertyName = "shopNo")]
         public string ShopNo;
+
         [JsonProperty(PropertyName = "shopName")]
         public string ShopName;
     }
