@@ -45,7 +45,7 @@ namespace LianOk.Docking.Entity.Request.Merchant
         /// 签名规则
         /// </summary>
         /// <returns></returns>
-        public override bool GetSignByJsonStringMethod()
+        public override bool GetNewRoute()
         {
             return true;
         }

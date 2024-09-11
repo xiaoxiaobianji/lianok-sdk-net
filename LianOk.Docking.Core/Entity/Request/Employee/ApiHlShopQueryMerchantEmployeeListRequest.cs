@@ -40,7 +40,7 @@ namespace LianOk.Docking.Entity.Request.Employee
         /// 签名规则
         /// </summary>
         /// <returns></returns>
-        public override bool GetSignByJsonStringMethod()
+        public override bool GetNewRoute()
         {
             return true;
         }

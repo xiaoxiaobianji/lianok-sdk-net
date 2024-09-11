@@ -14,7 +14,7 @@ namespace LianOk.Docking.Entity.Request.Accredit
         {
             return "api.hl.bill.merchant.bind";
         }
-        
+
         /// <summary>
         /// 分账方商户号
         /// </summary>
@@ -44,5 +44,9 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "agreement")]
         public string Agreement { get; set; }
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }

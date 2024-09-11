@@ -77,5 +77,9 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "shareRuleStatus")]
         public int ShareRuleStatus { get; set; }
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }

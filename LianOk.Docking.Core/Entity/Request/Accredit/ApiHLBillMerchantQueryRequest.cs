@@ -26,5 +26,9 @@ namespace LianOk.Docking.Entity.Request.Accredit
         /// </summary>
         [JsonProperty(PropertyName = "channelCode")]
         public string ChannelCode { get; set; }
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LianOk.Docking.Core;
 using LianOk.Docking.Entity.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,14 +24,26 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /**
          * 商户号
          */
-        public string merchantNo { get; set; }
-        public string itemId { get; set; }
-        public int originalPrice { get; set; }
-        public string outItemId { get; set; }
-        public int salePrice { get; set; }
-        public string saleStatus { get; set; }
-        public List<ItemDirectModifySku> skus;
-        public int stockNum { get; set; }
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
+        [JsonProperty(PropertyName = "itemId")]
+        public string ItemId { get; set; }
+        [JsonProperty(PropertyName = "mercoriginalPricehantNo")]
+        public int OriginalPrice { get; set; }
+        [JsonProperty(PropertyName = "outItemId")]
+        public string OutItemId { get; set; }
+        [JsonProperty(PropertyName = "salePrice")]
+        public int SalePrice { get; set; }
+        [JsonProperty(PropertyName = "saleStatus")]
+        public string SaleStatus { get; set; }
+        [JsonProperty(PropertyName = "skus")]
+        public List<ItemDirectModifySku> Skus { get; set; }
+        [JsonProperty(PropertyName = "stockNum")]
+        public int StockNum { get; set; }
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
 

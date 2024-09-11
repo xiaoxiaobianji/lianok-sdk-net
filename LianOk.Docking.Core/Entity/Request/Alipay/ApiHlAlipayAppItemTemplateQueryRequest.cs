@@ -1,4 +1,5 @@
 ﻿using LianOk.Docking.Core;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,16 +20,26 @@ namespace LianOk.Docking.Entity.Request.Alipay
             return "api.hl.alipay.app.item.template.query";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
-        /**
-         * 类目id
-         * 平台类目，填写的类目必须在类目表列出，只填最后一级。商品类目 ID 及信息可通过商品类目表获取。
-         */
-        public string categoryId { get; set; }
+        /// <summary>
+        /// 类目id
+        /// 平台类目，填写的类目必须在类目表列出，只填最后一级。商品类目 ID 及信息可通过商品类目表获取。
+        /// </summary>
+        [JsonProperty(PropertyName = "categoryId")]
+        public string CategoryId { get; set; }
+        /// <summary>
+        /// 新请求线路
+        /// </summary>
+        /// <returns></returns>
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
 

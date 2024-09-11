@@ -61,7 +61,7 @@ namespace LianOk.Docking.Core
             var content = JsonConvert.SerializeObject(req);
             var contentBytes = Encoding.UTF8.GetBytes(content);
             string requestUrl = Url;
-            if (request.GetSignByJsonStringMethod())
+            if (request.GetNewRoute())
             {
                 requestUrl = EntryUrl;
             }
@@ -96,7 +96,7 @@ namespace LianOk.Docking.Core
         private string GetSign<T>(T request, string requestTime) where T : DockingRequestBase
         {
             //如果走新签名方式，直接用json拼接签名
-            if (request.GetSignByJsonStringMethod())
+            if (request.GetNewRoute())
             {
                return GetJsonStringSign(request, requestTime);
             }

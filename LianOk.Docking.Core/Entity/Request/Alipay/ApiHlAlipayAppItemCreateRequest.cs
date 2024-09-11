@@ -1,5 +1,6 @@
 ﻿using LianOk.Docking.Core;
 using LianOk.Docking.Entity.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,30 +21,53 @@ namespace LianOk.Docking.Entity.Request.Alipay
             return "api.hl.alipay.app.item.create";
         }
 
-        /**
-         * 商户号
-         */
-        public string merchantNo { get; set; }
-
-        public List<AppItemAttrVO> attrs;
-        public string barcode { get; set; }
-        public string categoryId { get; set; }
-        public string desc { get; set; }
-        public ItemDescInfoVO descInfo;
-        public string directPath { get; set; }
-        public string headImg { get; set; }
-        public List<string> imageList;
-        public string itemDetailsPageModel { get; set; }
-        public string itemType { get; set; }
-        public int originalPrice { get; set; }
-        public string outItemId { get; set; }
-        public string path { get; set; }
-        public string priceUnit { get; set; }
-        public int salePrice { get; set; }
-        public string saleStatus { get; set; }
-        public List<ItemSkuCreateVO> skus;
-        public int stockNum { get; set; }
-        public string title { get; set; }
+        /// <summary>
+        /// 商户号
+        /// </summary>
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
+        [JsonProperty(PropertyName = "attrs")]
+        public List<AppItemAttrVO> Attrs { get; set; }
+        [JsonProperty(PropertyName = "barcode")]
+        public string Barcode { get; set; }
+        [JsonProperty(PropertyName = "categoryId")]
+        public string CategoryId { get; set; }
+        [JsonProperty(PropertyName = "desc")]
+        public string Desc { get; set; }
+        [JsonProperty(PropertyName = "descInfo")]
+        public ItemDescInfoVO DescInfo { get; set; }
+        [JsonProperty(PropertyName = "directPath")]
+        public string DirectPath { get; set; }
+        [JsonProperty(PropertyName = "headImg")]
+        public string HeadImg { get; set; }
+        [JsonProperty(PropertyName = "imageList")]
+        public List<string> ImageList { get; set; }
+        [JsonProperty(PropertyName = "itemDetailsPageModel")]
+        public string ItemDetailsPageModel { get; set; }
+        [JsonProperty(PropertyName = "itemType")]
+        public string ItemType { get; set; }
+        [JsonProperty(PropertyName = "originalPrice")]
+        public int OriginalPrice { get; set; }
+        [JsonProperty(PropertyName = "outItemId")]
+        public string OutItemId { get; set; }
+        [JsonProperty(PropertyName = "path")]
+        public string Path { get; set; }
+        [JsonProperty(PropertyName = "priceUnit")]
+        public string PriceUnit { get; set; }
+        [JsonProperty(PropertyName = "salePrice")]
+        public int SalePrice { get; set; }
+        [JsonProperty(PropertyName = "saleStatus")]
+        public string SaleStatus { get; set; }
+        [JsonProperty(PropertyName = "skus")]
+        public List<ItemSkuCreateVO> Skus { get; set; }
+        [JsonProperty(PropertyName = "stockNum")]
+        public int StockNum { get; set; }
+        [JsonProperty(PropertyName = "title")]
+        public string Title { get; set; }
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
     }
 }
 

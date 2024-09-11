@@ -1,4 +1,5 @@
 ﻿using LianOk.Docking.Core;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,22 +23,30 @@ namespace LianOk.Docking.Entity.Request.Alipay
         /// <summary>
         /// 商户号
         /// </summary>
-        public string merchantNo { get; set; }
+        [JsonProperty(PropertyName = "merchantNo")]
+        public string MerchantNo { get; set; }
 
         /// <summary>
         /// 火脸订单号
         /// </summary>
-        public string outOrderId { get; set; }
+        [JsonProperty(PropertyName = "outOrderId")]
+        public string OutOrderId { get; set; }
 
         /// <summary>
         /// 组件订单号
         /// </summary>
-        public string orderId { get; set; }
+        [JsonProperty(PropertyName = "orderId")]
+        public string OrderId { get; set; }
         /// <summary>
         /// 用户标识
         /// </summary>
-        public string userId { get; set; }
+        [JsonProperty(PropertyName = "userId")]
+        public string UserId { get; set; }
 
+        public override bool GetNewRoute()
+        {
+            return true;
+        }
 
     }
 }

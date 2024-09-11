@@ -212,17 +212,17 @@ namespace UnitTestProject1
             DefaultClient client = getClient();
             ApiHlAlipayMiniOrderCreateRequest request = new ApiHlAlipayMiniOrderCreateRequest();
             var flowNo = DateTime.Now.ToString("yyyyMMddHHmmss");
-            request.businessOrderNo = flowNo + "001";
-            request.subject = "Iphone14 256G";
-            request.path = "/pages/index/index?orderId=10190608609185";
+            request.BusinessOrderNo = flowNo + "001";
+            request.Subject = "Iphone14 256G";
+            request.Path = "/pages/index/index?orderId=10190608609185";
             //request.setSourceId("MjAfSVNfTlVMA==");
-            request.userId = "2088612535104436";
-            request.merchantNo = "102326";
-            request.operatorAccount = "18763825273";
-            request.payAmount = 1.0M;
+            request.UserId = "2088612535104436";
+            request.MerchantNo = "102326";
+            request.OperatorAccount = "18763825273";
+            request.PayAmount = 1.0M;
 
             //request.setMerchantBizType("CHARGING_PILE");
-            request.merchantBizType = "KX_SHOPPING";
+            request.MerchantBizType = "KX_SHOPPING";
             ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail orderDetail = new ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail();
             List<ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail.MiniOrderCreateItemInfos> itemInfos = new List<ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail.MiniOrderCreateItemInfos>();
             ApiHlAlipayMiniOrderCreateRequest.MiniOrderCreateOrderDetail.MiniOrderCreateItemInfos itemInfo
@@ -245,7 +245,7 @@ namespace UnitTestProject1
             priceInfo.discountedPrice = "88.88";
             priceInfo.orderPrice = "88.88";
             orderDetail.priceInfo = priceInfo;
-            request.orderDetail = orderDetail;
+            request.OrderDetail = orderDetail;
 
             var response = client.GetResponse<ApiHlAlipayMiniOrderCreateRequest, ApiHlAlipayMiniOrderCreateResponse>(request);
 
@@ -276,7 +276,7 @@ namespace UnitTestProject1
             DefaultClient client = getClient();
             ApiHlShopQueryWxAuthorizeStateRequest request = new ApiHlShopQueryWxAuthorizeStateRequest();
             request.MerchantNo = MERCHANT;
-            request.ChannelCode = "leShua";
+            request.ChannelCode = "";
             var response = client.GetResponse<ApiHlShopQueryWxAuthorizeStateRequest, ApiHlShopQueryWxAuthorizeStateResponse>(request);
         }
 
