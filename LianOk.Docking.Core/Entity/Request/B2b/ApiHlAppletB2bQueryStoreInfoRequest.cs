@@ -8,7 +8,7 @@ namespace LianOk.Docking.Entity.Request.B2b
     ///
     /// 参考：https://www.yuque.com/youyun-8yqqt/qs1g0e/nd4fnglgs7xqwysi
     /// </summary>
-    public class ApiHLB2bQueryStoreInfoRequest : DockingRequestBase
+    public class ApiHlAppletB2bQueryStoreInfoRequest : DockingRequestBase
     {
 
         public override string GetApiName()

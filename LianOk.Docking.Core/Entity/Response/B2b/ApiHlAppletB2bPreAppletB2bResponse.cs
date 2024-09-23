@@ -5,7 +5,7 @@ using System;
 namespace LianOk.Docking.Entity.Response.B2b
 {
     [Serializable]
-    public class ApiHlPreAppletB2bResponse : DockingResponseBase
+    public class ApiHlAppletB2bPreAppletB2bResponse : DockingResponseBase
     {
         [JsonProperty(PropertyName = "merchantNo")]
         public string MerchantNo;

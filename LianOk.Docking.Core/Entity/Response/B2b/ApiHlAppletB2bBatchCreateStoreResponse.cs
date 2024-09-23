@@ -5,7 +5,7 @@ using System;
 namespace LianOk.Docking.Entity.Response.B2b
 {
     [Serializable]
-    public class ApiHlBatchCreateStoreResponse : DockingResponseBase
+    public class ApiHlAppletB2bBatchCreateStoreResponse : DockingResponseBase
     {
         [JsonProperty(PropertyName = "failureRecords")]
         public string FailureRecords;
